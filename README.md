@@ -1,4 +1,4 @@
-# Interview_Questions
+    # Interview_Questions
 Collection of possible questions for Senior iOS Devevelpers
 
 ## Protocols:
@@ -179,12 +179,39 @@ Semaphore is used in concurrent programming. Acts as a gatekeeper, regulating th
 `Binary Semaphore`: Also known as a mutex (short for mutual exclusion), this type of semaphore has a maximum count of 1. It means only one thread or process can access the resource at a time. Binary semaphores are typically used to protect critical sections of code, where only one thread should be executing at any given time.
 `Counting Semaphore`: This type of semaphore has a specified maximum count greater than 1. It allows multiple threads or processes to access the resource simultaneously, up to the maximum count. Counting semaphores are often used to control access to resources that can handle a limited number of concurrent users, like limiting the number of connections to a database or controlling access to a pool of shared objects.
 
-#### Generics:
+## Generics:
 Generics represent any tyoe of data you define to mqke reusable and modular the functionality of the code.
 You can ad restrictions like T: Decodable to specify a particular behaviour to the function.
 
+## local storage options in iOS:
+1. UserDefaults => @AppStorage -  It is used to store small information in app like bool, string, int, double, etc. Just simple values.
+2. KeyChain => To store critical sensitive user data like password, certificates, cryptographyc keys and so on.
+3. CoreData => Coretada by default runs in main thread.
+    * Migrations:
+        1. Ligh weighth migration -> automatic migration, when you create a version n from the first database with Editor -> Add New Model Version.
+        2. Heavy weight migration -> manual migration -> We write the migration login in appDelegate.
+ 
+     * CoreData Concurrency: CoreData provides 2 ways of concurency for managed object models:
+        1. NSMainQueueConcurancyType -> All operations happens on main thread by default.
+        2. NSPrivateQueueConcurancyType -> Everything related to coredata will be done in background thread. This is for larger projects when we are managing large amounts of information.
 
-#### App Life cycle States:
+4. Bundle and some files => json, text,
+5. `.plist` => stored property lists inside the project
+6. Realm - 3rd party option to save data locally in our app.
+
+#### CoreData Stack:
+    Managed object context -> Is the workhorse of the Core Data stack. It is the object of the Core Data stack you, the developer, interact with most
+    Persistent store coordinator -> It keeps a reference to the managed object model and the managed object context. And, as the name implies, the persistent store coordinator is in charge of the persistent store of the application.
+    Managed object model -> An instance of the NSManagedObjectModel class, loads the data model and exposes it to the Core Data stack.
+
+![image](https://github.com/apaladines-techconsulting/Interview_Questions/assets/138136886/de399225-5933-4f5b-afd2-0cc90ac5c10b)
+
+#### CoreData Concurrency:
+
+![image](https://github.com/apaladines-techconsulting/Interview_Questions/assets/138136886/6e4c2f3a-4a80-4d40-b0fe-50053a40ee79)
+
+
+## App Life cycle States:
 - `Not Running:`
     The app is not launched or is terminated by the system or the user.
     No processes or code are running for the app.
@@ -212,15 +239,10 @@ When we receive a call, the application is get suspended, stoping all inside the
     The app is not running at all, not in memory, and not receiving any events.
     Only a terminated app can be in this state.
 
-#### Closure pattern:
-Is just the same closures we use as parameters or variables.
-It is used to send data back to the class that is implementing the closure. they can be scapping and nonScapping.
+## Declarative and imperative codibg
 
 
-#### Declarative and imperative codibg
-
-
-####  Combine:
+## Combine:
  
  It is a native framework made by Apple for Reactive development programming introduced in iOS 13.0
  Before Combine, there were two frameworks, RXSwift and RXCocoaTouch.
@@ -262,7 +284,7 @@ It is used to send data back to the class that is implementing the closure. they
 - `.debounce` -> to delay responses
 - `.throttle` -> ??
 
-#### ArchitecturePatterns -> One Single for whole project:
+## ArchitecturePatterns -> One Single for whole project:
 1. MVC
 2. MVVM -> Model View ViewModel
 3. MVVM-C -> Model View ViewModel Coordinator (Coordinator Pattern)
@@ -270,7 +292,7 @@ It is used to send data back to the class that is implementing the closure. they
 5. TCA -> Clean Architecture
 6. VIPER -> View Interactor Presenter Entity Router
 
-##### Design patterns:
+### Design Patterns:
 Group of smaller related classes, modules or sub functionalities inside one project. In one project can be multiple Design Patterns used:
 
  1. `Creational Design Patterns` -> Anything related to Object creation of class, comes under this category (one to one comunication, one to many, etc).
@@ -293,6 +315,10 @@ Group of smaller related classes, modules or sub functionalities inside one proj
     1. Adaptor pattern (Protocol delegate)
     2. Decorator
     3. Facade Design Pattern
+
+## Closure pattern:
+Is just the same closures we use as parameters or variables.
+It is used to send data back to the class that is implementing the closure. they can be scapping and nonScapping.
 
 #### RXSwift and RXCocoaTouch:
 - Major components:
