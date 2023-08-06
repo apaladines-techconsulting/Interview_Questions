@@ -1,8 +1,6 @@
 # Interview_Questions
 Collection of possible questions for Senior iOS Devevelpers
 
-# Questions and answers
-
 ## Protocols:
 Protocols are a blueprint to implement methods, properties or requirements that a class, struct, or enum must adopt. They have no implementation of methods. The only case is for additional functionalities in an extension of the protocol.
 Protocols can be composite like Codable that involves `Decodable & Encodable`.
