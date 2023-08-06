@@ -101,7 +101,17 @@ Structs are faster because they are put as stock in memory
 `Classes` are reference type meaning multiple variables can point to the same object in memory, have inheritance, they are deallocable and often used for complex data models. 
 Not trait, multiple values can be accessed at time.
 
-
+## Value Type vs Reference Type:
+`Value Type`:
+    - Is a type of data that is copied when assigned to a new variable or passed as an argument to a function.
+    - Each variable or instance of a value type has its own independent copy of the data, and changes made to one copy do not affect other copies.
+    - Common examples of value types in Swift include basic types like integers, floating-point numbers, booleans, strings, arrays, and structs.
+`Reference Type`: 
+    - Is a type of data where variables or instances share a reference to the same underlying data in memory.
+    - When a reference type is assigned to a new variable or passed as an argument, only the reference (memory address) is copied, not the actual data.
+    - Changes made to one instance of a reference type will be reflected in all other instances that share the same reference.
+    - Common examples of reference types in Swift include classes and closures.
+    
 ## Multithreading options in iOS:
 1. GCD -> Grand Central Dispatch
 2. OperationQueue
@@ -115,25 +125,35 @@ DispatchGroup
 
 
 #### GCD:
-
 It allows you to perform tasks concurrently by dividing them into smaller blocks and submitting them to queues that can be concurrent or serial.(main queue as maint thread).
 - `main` -> Serial queue.
 - `global` -> Concurrent queue.
 - `custom` -> Serial or Concurrent depending on the requirement.
+    Threads can be:
+    `Concurrent` -> 
+    `Serial` -> 
 
 `GCD - QoS (1 for the most prioritary and 4 for less priority):`
 1. `User Interactive` => For animations or any kind of user related job with direct UI interactions.
 2. `User Initiated` => When user requires imediate results, scrolling tableview for pagination or pull to reload
-* `Default` => Falls between UserInitiated and Utility.
-3. `Utility` => tasks which are long running, like downloading files.
-4. `Background` => Something which is not visible to user like creating backups, restoring from server/ syncing like retrieving data from google cloud, etc.
+3. `Default` => Falls between UserInitiated and Utility.
+4. `Utility` => tasks which are long running, like downloading files.
+5. `Background` => Something which is not visible to user like creating backups, restoring from server/ syncing like retrieving data from google cloud, etc.
 * `Unspecified` => This has the last priority.
 
-Concurrent and Serial.
+#### OperationQueue:
+Manages the execution of tasks as individual Operation objects.
+Tasks as Operations.
+Concurrency Control.
+Dependency Management.
+Prioritization.
+Cancellation.
+Completion Block.
 
-sync and async
-sync -> Blocks everything after it is finalized. One thing at time
-async -> Allows to continue with the application and run things in 
+#### Await Async:
+`Sync` -> Blocks everything after it is finalized. One thing at time.
+`Async` -> Allows to continue with the application and run things in.
+
 #### OperationQueue:
 Are nothing but tasks. They have the ability to add dependency, pause, stop and resume.
 OperationQueue is a high-level iOS mechanism that manages the execution of tasks (operations) concurrently. It provides control over task order, cancellation, and prioritization, making it easier to handle complex and structured operations compared to using GCD directly.
