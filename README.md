@@ -300,10 +300,10 @@ When we receive a call, the application is get suspended, stoping all inside the
 - `.receive` -> Receiving actual output.
 - `.sink` -> getting completion (data, error) (CORRECT THIS PART).
 - `.store` -> to clear out memory references, to deinitialize a reference or to cancel any task.
-- `.map` ->
-- `.merge` -> To mix multiple streams
-- `.debounce` -> to delay responses
-- `.throttle` -> ??
+- `.map` -> transforms the emitted values from one type to another using a transformation closure.
+- `.merge` -> To mix multiple streams.
+- `.debounce` -> to delay responses.
+- `.throttle` -> limits the rate at which values are emitted by a publisher.
 
 ## ArchitecturePatterns -> One Single for whole project:
 1. MVC
