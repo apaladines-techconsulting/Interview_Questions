@@ -336,6 +336,28 @@ Group of smaller related classes, modules or sub functionalities inside one proj
     2. Decorator
     3. Facade Design Pattern
 
+
+
+ Singleton Pattern
+ It ensures that only one object of class will be there thoroutghout our app
+ It provides global access to that instance
+
+ DataManager
+ AuthenticationManager
+ FileDownloaderManager
+ AnalyticsManager
+
+ Advantages:
+    make it easy
+    gives global access
+
+ AntiDesign Pattern
+    cannot have
+    needs to be used carefully
+    cannot write test cases
+
+
+
 ## Closure pattern:
 Is just the same closures we use as parameters or variables.
 It is used to send data back to the class that is implementing the closure. they can be scapping and nonScapping.
