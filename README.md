@@ -89,8 +89,47 @@ A non-escaping closure is a closure that is guaranteed to be executed before the
 
 
 ## Swift vs Objective-C:
+Was developed from C and C++
+
 `Swift` is a modern and expressive language with strong typing `(variables can be explicitly declared)` and Type Inference where swift's compiler can infer the data type of a variable based on its initial value. Error handling and optionals to enhance code reliability. ARC (Automatic Reference Counting) meaning automatic memory management.
 `Objective-C` is an established, dynamic language that integrates well with C. It offers powerful runtime features and is suitable for legacy projects. It can also be gradually adopted in Swift projects. 
+
+OOPS on C and CPP
+
+###### Objc:
+- Everything is classes, theres no structs
+- protocols
+- category
+- Enum -> But used with Int only
+
+- Reference Type
+    - NSString
+    - NSArray
+    - NSDictionary
+
+NSNameSpace
+
+##### Swift:
+* TypeSafety -> `var name = 10, true` We cannot assign different types to the same variable.
+
+* TypeInference -> `var name = "ABC"`
+
+- Optionals
+- Structs
+- Generics
+- Closures
+- Higher Oreder Funcions (map, filter, sort)
+- Extensions
+
+- Value Types:
+    - Array
+    - String
+    - Dictionary
+
+
+- Objects can be null
+- Objects can be nil
+
 
 ## Struct vs Classes:
 `Structs` are value type, meaning they can be copied and passed arround the code. Modifications in a copy don't affect the original. They do not support iheritance and are suitable for simple data models.
