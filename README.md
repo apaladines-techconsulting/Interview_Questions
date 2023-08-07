@@ -408,3 +408,30 @@ It is used to send data back to the class that is implementing the closure. they
     2. Observables
     3. Operators
 
+## Memory Management:
+Whow iOS Does Memory Management
+ ARC - Automatic Reference Counting
+
+ Objective and swift it works automatically
+
+ Initially the Reference count will mbe zero
+
+ var gretings = "Hello World"
+ Reference count = Reference count +1
+ Reference count = 1
+
+ gretings = nil
+ Reference count = Reference count -1
+
+ Reference count = 0
+ Thats when OS free that block of memory
+
+ It keeps the track of references to objects and releases them when they are no longer needed.
+
+### Type of reference variables:
+- strong -> This is the default attribute. It keeps those objects alive in memory.
+- weak -> When we don't want to have ownership of that object. To avoid cycle issues as well.
+- unowned -> Similar to weak but complusionb is that it should always have data. otherwise it can cause crashes in app.
+
+ Retain cycle -> When one strong object retains another strong object, then, it creates retain cycle issues of memory leaks.
+
