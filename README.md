@@ -303,7 +303,7 @@ When we receive a call, the application is get suspended, stoping all inside the
 - `.map` -> transforms the emitted values from one type to another using a transformation closure.
 - `.merge` -> To mix multiple streams.
 - `.debounce` -> to delay responses.
-- `.throttle` -> limits the rate at which values are emitted by a publisher.
+- `.throttle` -> limits the rate of values emitted by a publisher.
 
 ## ArchitecturePatterns -> One Single for whole project:
 1. MVC
