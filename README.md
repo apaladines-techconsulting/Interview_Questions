@@ -109,6 +109,12 @@ OOPS on C and CPP
 
 NSNameSpace
 
+Actor -> Only one trhead can change the value
+weak -> 
+strong ->
+atomic -> Thread Safe: Only one trhead can change the value
+nonatomic -> NONThread Safe: Multiple trheads can change the value
+
 ##### Swift:
 * TypeSafety -> `var name = 10, true` We cannot assign different types to the same variable.
 
