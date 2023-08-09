@@ -445,7 +445,7 @@ Whow iOS Does Memory Management
 This provides an abstraction layer between the data storage (API / CoreData) and rest of aplication
  
 ## Clean Architecture:
-Its like Onion or Layer Archiqtecture.
+Its like Onion (multiple layers) or Layer Archiqtecture.
 All Business logic will be the center of your core
  
 - Entities -> This is our business logic and are at core of clean arch
@@ -510,3 +510,6 @@ protocol A {
  
  - Dependency Inversion
  Send object from outside, not defining objects inside the function, like the networkManager (protocols) that is sent in the init and not instanciated in function.
+
+* Too much abstractions could make the code more complicated instad of facilitating the coding time to developers.
+
