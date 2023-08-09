@@ -441,3 +441,72 @@ Whow iOS Does Memory Management
 
  Retain cycle -> When one strong object retains another strong object, then, it creates retain cycle issues of memory leaks.
 
+##  Repository Pattern: 
+This provides an abstraction layer between the data storage (API / CoreData) and rest of aplication
+ 
+## Clean Architecture:
+Its like Onion or Layer Archiqtecture.
+All Business logic will be the center of your core
+ 
+- Entities -> This is our business logic and are at core of clean arch
+- Uses Cases -> (interactor / Repository) -> Will contain the rules or flow of data between entities.
+- Interface Adapter -> (Presenters, Controllers and ViewModels) 
+- Frameworks and Drivers -> UI, Database, Webservice, Analytics and all external third party frameworks.
+
+MVVM vs Clean Architecture
+We can go with mvvm and create a Clean Architecture.
+ 
+ 
+ 
+## SOLID
+
+S -> `Single Responsibility`: It states that, any function or class should only do one task.
+O -> `Open Close Principle1`: Open for extension but closed for modification.
+L -> `Liskov Substitution Principle`: Parent class objects should be easily replasable with child or derived object.
+I -> `Interface Segregation`: Clients should not be forced to depend upon interfaces they don't requiere. Instead of having one big protocol, divide multiple small protocol.
+D -> `Dependency Inversion`:  Different parts of your code should not depend on concrete classes.
+
+ - Liskov
+ ```swift
+class Parent{
+    var data: Data? 
+}
+class Child: Parent {
+
+}
+let data = dataFromService()
+let parent = Parent(data: data)
+let child = Child(data:data)
+ ```
+ 
+- Interface Segregation
+
+Instead of:
+ ```swift
+protocol A {
+    func a()
+    func b()
+    func c()
+    func d()
+    func e()
+}
+```
+
+do this:
+```swift
+
+protocol A {
+    func a()
+    func b()
+    func c()
+}
+protocol A {
+    func d()
+    func e()
+}
+ ```
+ Because we wont need every function in every class that consforms the protocols.
+ If there is a case, we can use `class Parent: A,B { ... }` or `public typealias Codable = Decodable & Encodable` for `class A: Codable`
+ 
+ - Dependency Inversion
+ Send object from outside, not defining objects inside the function, like the networkManager (protocols) that is sent in the init and not instanciated in function.
