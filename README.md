@@ -312,6 +312,7 @@ When we receive a call, the application is get suspended, stoping all inside the
  
  It is a native framework made by Apple for Reactive development programming introduced in iOS 13.0
  Before Combine, there were two frameworks, RXSwift and RXCocoaTouch.
+ You can 
 
  - Publisher Subscriber Pattern
  - Observer Pattern
@@ -338,7 +339,19 @@ When we receive a call, the application is get suspended, stoping all inside the
     3. Multithreading -> it handles concurancy by itself.
     4. Cancelation support.
     5. Built in memory management 
-    
+
+- Property Wrappers:
+  1. @State
+  2. @ObservedObject
+  3. @StateObject
+  4. @Binding
+  5. @EnvironmentObject
+  6. ObservableObject -> This is the protocol to create
+
+ Difference between
+     @StateObject -> Only recreates a part of the view
+     @ObservedObject -> recreates everything
+     
 #### Common higher methods to use in Combine:
 - `.tryMap` -> To map data.
 - `.decode` -> Parsinng.
