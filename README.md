@@ -92,7 +92,12 @@ A non-escaping closure is a closure that is guaranteed to be executed before the
 Was developed from C and C++
 
 `Swift` is a modern and expressive language with strong typing `(variables can be explicitly declared)` and Type Inference where swift's compiler can infer the data type of a variable based on its initial value. Error handling and optionals to enhance code reliability. ARC (Automatic Reference Counting) meaning automatic memory management.
+typoe safety, type inference, generics, 
 `Objective-C` is an established, dynamic language that integrates well with C. It offers powerful runtime features and is suitable for legacy projects. It can also be gradually adopted in Swift projects. 
+
+Objg: Reference type, we need to manage the memory by ourselfs
+Swift: Reference and 
+
 
 OOPS on C and CPP
 
@@ -137,6 +142,9 @@ nonatomic -> NONThread Safe: Multiple trheads can change the value
 - Objects can be nil
 
 
+## Computed property and Lazy Property
+//COMPLETE
+
 ## Struct vs Classes:
 `Structs` are value type, meaning they can be copied and passed arround the code. Modifications in a copy don't affect the original. They do not support iheritance and are suitable for simple data models.
 Trait safe one value can be acessed at time.
@@ -165,7 +173,7 @@ Not trait, multiple values can be accessed at time.
 4. Actor
 5. Thread
 6. Semaphore
- 
+
 DispatchWorkItem
 DispatchGroup
 
@@ -179,7 +187,7 @@ It allows you to perform tasks concurrently by dividing them into smaller blocks
     `Concurrent` -> 
     `Serial` -> 
 
-`GCD - QoS (1 for the most prioritary and 4 for less priority):`
+`GCD - QoS (1 for the most prioritary and 4 for less priority)`:
 1. `User Interactive` => For animations or any kind of user related job with direct UI interactions.
 2. `User Initiated` => When user requires imediate results, scrolling tableview for pagination or pull to reload
 3. `Default` => Falls between UserInitiated and Utility.
@@ -269,6 +277,8 @@ You can ad restrictions like T: Decodable to specify a particular behaviour to t
     Managed object context -> Is the workhorse of the Core Data stack. It is the object of the Core Data stack you, the developer, interact with most
     Persistent store coordinator -> It keeps a reference to the managed object model and the managed object context. And, as the name implies, the persistent store coordinator is in charge of the persistent store of the application.
     Managed object model -> An instance of the NSManagedObjectModel class, loads the data model and exposes it to the Core Data stack.
+
+By default CoreData run in main thread, a better practice is to run it in privateContext that means background.
 
 ![image](https://github.com/apaladines-techconsulting/Interview_Questions/assets/138136886/de399225-5933-4f5b-afd2-0cc90ac5c10b)
 
