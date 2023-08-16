@@ -642,4 +642,20 @@ Taking in cosideration all the past mentioned practices.
     Synopsys.com -> Black Duck Software Comsposition Analysis.
 
 
-## AppStore:
+# CI/CD
+
+Everything  like building the app, running test cases, creating archive for app, and submiting build to testFlight, etc. will be automatically.
+
+1. Jenkins and Fastlane
+2. AzureCI
+3. CircleCI
+4. Bitrise
+5. TravisCI
+6. GitHub Actions
+
+- Jenkins and Fastlane.
+Jenkins -> 3rd party server tool for continuous integration.
+Fastlane -> 3rd party tool for continuous delivery.
+        Gemfile file with its own dependencies.
+        fastlane/Fastlane directory and file.
+
