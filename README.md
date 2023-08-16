@@ -640,3 +640,6 @@ Taking in cosideration all the past mentioned practices.
     Using `#if DEBUG` if prints are necessary in development mode.
     Following guidelines in [auth0.com](https://auth0.com/blog/security-best-practices-in-ios/)
     Synopsys.com -> Black Duck Software Comsposition Analysis.
+
+
+## AppStore:
