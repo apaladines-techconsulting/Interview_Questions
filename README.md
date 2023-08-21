@@ -132,7 +132,7 @@ nonatomic -> NONThread Safe: Multiple trheads can change the value
 
 * TypeInference -> `var name = "ABC"`
 
-- Optionals
+- Optionals -> Internally it is an enum with two states (none and nil).
 - Structs
 - Generics
 - Closures
