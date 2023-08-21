@@ -1,6 +1,13 @@
 # Interview_Questions
 Collection of possible questions for Senior iOS Devevelpers
 
+
+## Dependency injections
+- function injetion
+- parameter injection
+- constructor injection
+
+
 ## Protocols:
 Protocols are a blueprint to implement methods, properties or requirements that a class, struct, or enum must adopt. They have no implementation of methods. The only case is for additional functionalities in an extension of the protocol.
 Protocols can be composite like Codable that involves `Decodable & Encodable`.
@@ -620,6 +627,13 @@ func encryptDataUsingCryptoKit() {
     let sha512Hash = SHA512.hash(data: dataTOEncrypt)
 }
 ```
+SwiftUI vs Swift
+- Everything made with structs Tsack memory (faster) instead of classes Heat memory
+- More updated
+- We use code instead of UIKit (storyboards)
+- Protocol oriented programming instead of Swift that is oop
+- We dont have constraints nor autolayout in swiftUI
+
 
 ## 3. Jailbroken Detection:
 There is a preatty standard file that helps us with this task `JailbrokenCheck.swift`
