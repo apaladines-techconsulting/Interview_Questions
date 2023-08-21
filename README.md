@@ -484,9 +484,13 @@ We can go with mvvm and create a Clean Architecture.
 ## SOLID
 
 S -> `Single Responsibility`: It states that, any function or class should only do one task.
+
 O -> `Open Close Principle1`: Open for extension but closed for modification.
+
 L -> `Liskov Substitution Principle`: Parent class objects should be easily replasable with child or derived object.
+
 I -> `Interface Segregation`: Clients should not be forced to depend upon interfaces they don't requiere. Instead of having one big protocol, divide multiple small protocol.
+
 D -> `Dependency Inversion`:  Different parts of your code should not depend on concrete classes.
 
  - Liskov
