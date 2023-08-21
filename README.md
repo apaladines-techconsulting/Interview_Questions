@@ -11,6 +11,7 @@ Collection of possible questions for Senior iOS Devevelpers
 ## Protocols:
 Protocols are a blueprint to implement methods, properties or requirements that a class, struct, or enum must adopt. They have no implementation of methods. The only case is for additional functionalities in an extension of the protocol.
 Protocols can be composite like Codable that involves `Decodable & Encodable`.
+Mostrly used in SwiftUI but also used in Swift, for NetworkManager to create fake and real managers for better testings. Dependency injections and indirectly used for test cases
 
 ```swift
 protocol Vehicle {
@@ -34,6 +35,9 @@ struct Car: Vehicle {
 
 ## Extension:
 As its word says, they are often used to extend the original functionality of an object.
+Following the open close principle, open to extensions close for editing.
+extensions in protocols -> to create optional functinoalities.
+
 
 ```swift
 //Following the Vehicle's protocol:
@@ -173,13 +177,14 @@ Not trait, multiple values can be accessed at time.
     - Changes made to one instance of a reference type will be reflected in all other instances that share the same reference.
     - Common examples of reference types in Swift include classes and closures.
     
-## Multithreading options in iOS:
+## Multithreading or threading options in iOS:
 1. GCD -> Grand Central Dispatch
 2. OperationQueue
 3. Await Async
 4. Actor
 5. Thread
 6. Semaphore
+7. Defer
 
 DispatchWorkItem
 DispatchGroup
@@ -212,6 +217,7 @@ Cancellation.
 Completion Block.
 
 #### Await Async:
+Commonly used in api calls, get data from a file, getting data from keychain.
 `Sync` -> Blocks everything after it is finalized. One thing at time.
 `Async` -> Allows to continue with the application and run things in.
 
@@ -324,12 +330,17 @@ When we receive a call, the application is get suspended, stoping all inside the
 
 ## Declarative and imperative codibg
 
+## Initializers or Inits
+memberwise (structs)
+default initializers
+failable required
+required initializers
 
 ## Combine:
  
  It is a native framework made by Apple for Reactive development programming introduced in iOS 13.0
  Before Combine, there were two frameworks, RXSwift and RXCocoaTouch.
- You can 
+ You can use combine to make the code simpler and reusable.
 
  - Publisher Subscriber Pattern
  - Observer Pattern
@@ -676,4 +687,13 @@ Jenkins -> 3rd party server tool for continuous integration.
 Fastlane -> 3rd party tool for continuous delivery.
         Gemfile file with its own dependencies.
         fastlane/Fastlane directory and file.
+
+
+## Test Testing TDD (test driven)BDD
+TDD Test Driven Development:
+XCTest
+    Stubbing, bocking, Faking
+
+BDD: Behavioural Driven Development:
+    Quick and Nimble -> Start with given (setting up) when () and then ()
 
