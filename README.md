@@ -12,7 +12,7 @@
 - Continuous integration (Jenkins and fastlane, 2. AzureCI, CircleCI, Bitrise, TravisCI, GitHub Actions, Bitbucket Pipelines).
 
 # Exp:
-- Northwest Bank, Warren, PA - 02/2022 – Current
+- Northwest Bank, Warren, Pennsylvania - 02/2022 – Current (Remote).
     - Redesign from UIKit to swiftUI
     - MVVM  -> Async Await; Combine; prop wrappers;
     - SDLC end-to-end
@@ -20,7 +20,7 @@
     - Test coverage of the App from 60% to 70%
     - Worked with UX closelly
 
-- Marriott International Inc., Bethesda, Maryland 06/2020 – 02/2022
+- Marriott International Inc., Bethesda, Maryland 06/2020 – 02/2022 (7750 Wisconsin Ave, Bethesta)
     - Same before
     - MapKit, CoreLocation, Keichain, Lottie.
     - CoreBluetooth
@@ -30,10 +30,8 @@
     - GirHub
     - GDC
 
-
 # Interview_Questions
 Collection of possible questions for Senior iOS Devevelpers
-
 
 ## OOPS:
 - Object-Oriented Programming
