@@ -221,7 +221,7 @@ Not trait, multiple values can be accessed at time.
     - Common examples of reference types in Swift include classes and closures.
     
 ## Multithreading or threading options in iOS:
-1. GCD -> Grand Central Dispatch
+1. GCD -> 
 2. OperationQueue
 3. Await Async
 4. Actor
@@ -229,9 +229,12 @@ Not trait, multiple values can be accessed at time.
 6. Semaphore
 7. Defer
 
+
 DispatchWorkItem
 DispatchGroup
 
+### Grand Central Dispatch VS -> NSOperation
+-  n njhuy76presice and easy to use, lots of threads vs NSOperation more control over the multithreading stop, continue, cancel.
 
 #### GCD:
 It allows you to perform tasks concurrently by dividing them into smaller blocks and submitting them to queues that can be concurrent or serial.(main queue as maint thread).
