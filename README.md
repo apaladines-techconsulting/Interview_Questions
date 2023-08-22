@@ -1,3 +1,23 @@
+#Exp:
+- Northwest Bank, Warren, PA - 02/2022 – Current
+    - Redesign from UIKit to swiftUI
+    - MVVM  -> Async Await; Combine; prop wrappers;
+    - SDLC end-to-end
+    - LLDB statements, register read, po, bt, expr
+    - Test coverage of the App from 60% to 70%
+    - Worked with UX closelly
+
+- Marriott International Inc., Bethesda, Maryland 06/2020 – 02/2022
+    - Same before
+    - MapKit, CoreLocation, Keichain, Lottie.
+    - CoreBluetooth
+    - swiftLint
+    - Agile Scrum
+    - AES
+    - GirHub
+    - GDC
+
+
 # Interview_Questions
 Collection of possible questions for Senior iOS Devevelpers
 
