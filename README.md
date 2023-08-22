@@ -30,6 +30,11 @@
     - GirHub
     - GDC
 
+
+## TTD & BDD:
+- TDD = write test first then functionality
+- BDD = write functionality and then test cases
+
 # Interview_Questions
 Collection of possible questions for Senior iOS Devevelpers
 
