@@ -1,4 +1,9 @@
-#Exp:
+# Elev Speech:
+
+- Hello, I'm an accomplished iOS developer with over 8 years of experience,
+- worked on 5 published mobile applications. My expertise spans Swift, Objective-C, and NodeJS, along with in-depth knowledge of various design architectures like MVVM and VIPER. I'm well-versed in UI/UX development, utilizing both programmatic and storyboard approaches. My proficiency extends to data persistence using CoreData, Realm, and Keychain, with a strong focus on performance optimization using multithreading and GCD. I excel in integrating RESTful APIs and have a solid grasp of essential iOS frameworks like Core Graphics, Core Animation, and Core Location. I'm committed to best practices, unit testing, and continuous integration. If you're seeking a developer who can deliver robust, user-centric iOS applications while adhering to industry standards, I'd be thrilled to discuss how I can contribute to your team.
+
+# Exp:
 - Northwest Bank, Warren, PA - 02/2022 – Current
     - Redesign from UIKit to swiftUI
     - MVVM  -> Async Await; Combine; prop wrappers;
@@ -21,6 +26,13 @@
 # Interview_Questions
 Collection of possible questions for Senior iOS Devevelpers
 
+
+## OOPS:
+- Object-Oriented Programming
+    - Encapsulation -> Hidding attributes;
+    - Inheritance -> Creating sub classes from superclass
+    - Polymorphism -> Subclasses can be treated as objects of a common superclass
+    - Abstraction -> Interfaces.- protocols
 
 ## Dependency injections
 - function injetion
