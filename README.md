@@ -1,7 +1,15 @@
 # Elev Speech:
 
 - Hello, I'm an accomplished iOS developer with over 8 years of experience,
-- worked on 5 published mobile applications. My expertise spans Swift, Objective-C, and NodeJS, along with in-depth knowledge of various design architectures like MVVM and VIPER. I'm well-versed in UI/UX development, utilizing both programmatic and storyboard approaches. My proficiency extends to data persistence using CoreData, Realm, and Keychain, with a strong focus on performance optimization using multithreading and GCD. I excel in integrating RESTful APIs and have a solid grasp of essential iOS frameworks like Core Graphics, Core Animation, and Core Location. I'm committed to best practices, unit testing, and continuous integration. If you're seeking a developer who can deliver robust, user-centric iOS applications while adhering to industry standards, I'd be thrilled to discuss how I can contribute to your team.
+- Worked on 5 published mobile applications. My expertise spans Swift, Objective-C, and NodeJS, flutter and React-Native
+- With in-depth knowledge of various design architectures like MVVM and VIPER.
+- Well-versed in UI/UX development, utilizing both programmatic and storyboard approaches.
+- Worked with data persistence like CoreData, Realm, UserDefaults, Keychain, 
+- Focus on performance optimization using multithreading and GCD.
+- Commonly worked RESTful APIs 
+- CoreGraphics, CoreAnimation, and CoreLocation, MapKit.
+- I'm committed to best practices, unit testing (TDD XCTest),
+- Continuous integration (Jenkins and fastlane, 2. AzureCI, CircleCI, Bitrise, TravisCI, GitHub Actions, Bitbucket Pipelines).
 
 # Exp:
 - Northwest Bank, Warren, PA - 02/2022 – Current
