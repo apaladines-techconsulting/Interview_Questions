@@ -1,7 +1,7 @@
 # Elev Speech:
 
 
-Hello, I'm Andres, an accomplished iOS Developer with over 8 years of experience crafting sophisticated mobile applications. My track record includes 5 published and successful apps, showcasing my experience in Objective-C, UIKit and SwiftUI. 
+Hello, I'm Andres, an accomplished iOS Developer with over 8 years of experience crafting refined mobile applications. My track record includes 4 published and successful apps, showcasing my experience in Objective-C, UIKit and SwiftUI. 
 
 I contributed to the 'Northwest Mobile Banking' app redesigning UI components and implementing MVVM architecture. At Marriott International, I played a key role enhancing the 'Marriott Bonvoy' app. Some of the things I implemented were Apple accessibility APIs and migrating code from UIKit to SwiftUI. I also have experience with the Agile approach and have managed end-to-end development at companies like Cardinal Health and Floor & Décor.
 
