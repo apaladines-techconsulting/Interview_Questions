@@ -5,7 +5,7 @@ Hello, I'm Andres, an accomplished iOS Developer with over 8 years of experience
 
 I contributed to the 'Northwest Mobile Banking' app redesigning UI components and implementing MVVM architecture. At Marriott International, I played a key role enhancing the 'Marriott Bonvoy' app. Some of the things I implemented were Apple accessibility APIs and migrating code from UIKit to SwiftUI. I also have experience with the Agile approach and have managed end-to-end development at companies like Cardinal Health and Floor & Décor.
 
-I specialize in frameworks like UIKit, SwiftUI, Combine, Core Data and 3rd-party frameworks like AlamoFire and Firebase. I also excel at architecting solutions using design patterns like MVC, MVVM, MVVM-C, VIPER and Clean Architecture. With a deep understanding of multithreading, I ensure seamless performance using GCD, Operation Queue, Actors and Await Async. While collaborating with cross-functional teams, I integrated CI/CD tools like Jenkins and Fastlane as part of my daily routine.
+I specialize in frameworks like UIKit, SwiftUI, Combine, CoreData, MapKit, CoreLocation and 3rd-party frameworks like AlamoFire and Firebase. I also excel at architecting solutions using design patterns like MVC, MVVM, MVVM-C, VIPER and Clean Architecture. With a deep understanding of multithreading, I ensure seamless performance using GCD, Operation Queue, Actors and Await Async. While collaborating with cross-functional teams, I integrated CI/CD tools like Jenkins and Fastlane as part of my daily routine.
 
 With my technical depth and more than 12 years in IT, I am ready to bring substantial value to your technical endeavours.
 
