@@ -1,11 +1,10 @@
-# Elev Speech:
+# Elevator Speech:
 
+Hello, I'm Andres, an accomplished iOS Developer with over 8 years of experience crafting refined mobile applications. My track record includes 5 published and successful apps, showcasing my experience in Objective-C, UIKit and SwiftUI. 
 
-Hello, I'm Andres, an accomplished iOS Developer with over 8 years of experience crafting refined mobile applications. My track record includes 4 published and successful apps, showcasing my experience in Objective-C, UIKit and SwiftUI. 
+My contribution on 'Northwest Mobile Banking' app was redesigning UI components and implementing MVVM architecture. At Marriott, I played a key role enhancing the 'Marriott Bonvoy' app implementing Apple accessibility APIs and migrating code from UIKit to SwiftUI. I also have experience with the Agile approach and have managed end-to-end development at companies like Cardinal Health and Floor & Décor.
 
-I contributed to the 'Northwest Mobile Banking' app redesigning UI components and implementing MVVM architecture. At Marriott International, I played a key role enhancing the 'Marriott Bonvoy' app. Some of the things I implemented were Apple accessibility APIs and migrating code from UIKit to SwiftUI. I also have experience with the Agile approach and have managed end-to-end development at companies like Cardinal Health and Floor & Décor.
-
-I specialize in frameworks like UIKit, SwiftUI, Combine, CoreData, MapKit, CoreLocation and 3rd-party frameworks like AlamoFire and Firebase. I also excel at architecting solutions using design patterns like MVVM-C, VIPER and Clean Architecture. With a deep understanding of multithreading, I ensure seamless performance using GCD, Operation Queue, Actors and Await Async. While collaborating with cross-functional teams, I integrated CI/CD tools like Jenkins and Fastlane as part of my daily routine.
+I specialize in frameworks like UIKit, SwiftUI, Combine, CoreData, MapKit, CoreLocation and 3rd-party frameworks like AlamoFire and Firebase. I also excel at architecting solutions using design patterns like MVVM-C, VIPER and Clean Architecture. With a deep understanding of multithreading, I ensure seamless performance using GCD, Operation Queue, Actors and Await Async. While collaborating with cross-functional teams, I integrated CI/CD tools like Jenkins and Fastlane as part of my daily routine. Another part of my routine was managing version control with GIT. This included helping developers to deal with merge conflits and approving pull requests of previously reviewed code.
 
 With my technical depth and more than 12 years in IT, I am ready to bring substantial value to your technical endeavours.
 
@@ -245,15 +244,14 @@ Not trait, multiple values can be accessed at time.
     - When a reference type is assigned to a new variable or passed as an argument, only the reference (memory address) is copied, not the actual data.
     - Changes made to one instance of a reference type will be reflected in all other instances that share the same reference.
     - Common examples of reference types in Swift include classes and closures.
-    
-## Multithreading or threading options in iOS:
+
+## Multithreading or threading options in iOS (6 ways):
 1. GCD -> 
 2. OperationQueue
 3. Await Async
 4. Actor
 5. Thread
 6. Semaphore
-7. Defer
 
 
 DispatchWorkItem
@@ -277,7 +275,7 @@ It allows you to perform tasks concurrently by dividing them into smaller blocks
 3. `Default` => Falls between UserInitiated and Utility.
 4. `Utility` => tasks which are long running, like downloading files.
 5. `Background` => Something which is not visible to user like creating backups, restoring from server/ syncing like retrieving data from google cloud, etc.
-* `Unspecified` => This has the last priority.
+6. `Unspecified` => This has the last priority.
 
 #### OperationQueue:
 Manages the execution of tasks as individual Operation objects.
