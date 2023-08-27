@@ -8,33 +8,13 @@ I specialize in frameworks like UIKit, SwiftUI, Combine, CoreData, MapKit, CoreL
 
 With my technical depth and more than 12 years in IT, I am ready to bring substantial value to your technical endeavours.
 
-
--
--
--
--
--
--
--
--
-
-
-
-
-
-
-
-
-- Hello, I'm an accomplished iOS developer with over 8 years of experience,
-- Worked on 5 published mobile applications. My expertise spans Swift, Objective-C, and NodeJS, flutter and React-Native
-- With in-depth knowledge of various design architectures like MVVM and VIPER.
-- Well-versed in UI/UX development, utilizing both programmatic and storyboard approaches.
-- Worked with data persistence like CoreData, Realm, UserDefaults, Keychain, 
-- Focus on performance optimization using multithreading and GCD.
-- Commonly worked RESTful APIs 
-- CoreGraphics, CoreAnimation, and CoreLocation, MapKit.
-- I'm committed to best practices, unit testing (TDD XCTest),
-- Continuous integration (Jenkins and fastlane, 2. AzureCI, CircleCI, Bitrise, TravisCI, GitHub Actions, Bitbucket Pipelines).
+#### Jobs:
+Splendid Spoon, Minneapolis, Minnesota, U.S.- 02/2010 – 12/2014
+Hooters of America, LLC, Atlanta, GA - 01/2015 – 03/2017
+Floor & Décor, Atlanta, GA 03/2017 – 05/2019
+Cardinal Health, Dublin, Ohio - 05/2019 – 06/2020
+Marriott International Inc., Bethesda, Maryland 06/2020 – 02/2022
+Northwest Bank, Warren, PA - 02/2022 – Current
 
 # Exp:
 - Northwest Bank, Warren, Pennsylvania - 02/2022 – Current (Remote).
@@ -54,7 +34,6 @@ With my technical depth and more than 12 years in IT, I am ready to bring substa
     - AES
     - GirHub
     - GDC
-
 
 ## TTD & BDD:
 - TDD = write test first then functionality
