@@ -9,12 +9,12 @@ I specialize in frameworks like UIKit, SwiftUI, Combine, CoreData, MapKit, CoreL
 With my technical depth and more than 12 years in IT, I am ready to bring substantial value to your technical endeavours.
 
 #### Jobs:
-Splendid Spoon, Minneapolis, Minnesota, U.S.- 02/2010 – 12/2014
-Hooters of America, LLC, Atlanta, GA - 01/2015 – 03/2017
-Floor & Décor, Atlanta, GA 03/2017 – 05/2019
-Cardinal Health, Dublin, Ohio - 05/2019 – 06/2020
-Marriott International Inc., Bethesda, Maryland 06/2020 – 02/2022
-Northwest Bank, Warren, PA - 02/2022 – Current
+- Splendid Spoon, Minneapolis, Minnesota, U.S.- 02/2010 – 12/2014
+- Hooters of America, LLC, Atlanta, GA - 01/2015 – 03/2017
+- Floor & Décor, Atlanta, GA 03/2017 – 05/2019
+- Cardinal Health, Dublin, Ohio - 05/2019 – 06/2020
+- Marriott International Inc., Bethesda, Maryland 06/2020 – 02/2022
+- Northwest Bank, Warren, PA - 02/2022 – Current
 
 # Exp:
 - Northwest Bank, Warren, Pennsylvania - 02/2022 – Current (Remote).
