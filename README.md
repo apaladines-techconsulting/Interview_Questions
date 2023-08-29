@@ -618,6 +618,10 @@ protocol A {
     a. UserDefaults -> Don't store sensitive data here
     b. Keychain -> To store small sensitive data
     c. CoreData -> We can use `SQLCipher` or sqlite file we can set a value for key `NSPersistenStoreFilePRotectionKey` to store data in a secure way.
+        - completeUntilFirstUserAuthentication
+        - completeUnlessOpen
+        - complete
+        - none
     d. plist -> Save tokens and API keys in plist not in code directly (like google plist file).
     e. bundle -> Use `completeFileProtection` flag for writing files in your app.
         - Complete 
