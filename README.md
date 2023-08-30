@@ -336,10 +336,11 @@ You can ad restrictions like T: Decodable to specify a particular behaviour to t
 6. Realm - 3rd party option to save data locally in our app.
 
 #### CoreData Stack:
-    Managed object context -> Is the workhorse of the Core Data stack. It is the object of the Core Data stack you, the developer, interact with most
-    Persistent store coordinator -> It keeps a reference to the managed object model and the managed object context. And, as the name implies, the persistent store coordinator is in charge of the persistent store of the application.
-    Managed object model -> An instance of the NSManagedObjectModel class, loads the data model and exposes it to the Core Data stack.
-
+- Managed Object Model: The blueprint that defines how your data looks, including its structure, attributes, and relationships. It's like designing the layout of your data.
+- Managed Object Context: The workspace where you create, modify, and interact with your data objects. Think of it as a place to perform actions on your data.
+- Persistent Store Coordinator: The bridge that connects your data objects in the context to where they're actually stored. It manages the translation between your app's objects and their storage format.
+- Persistent Store: The place where your data is saved, like a file or database. It's where your app's data lives on disk, even when the app is closed.
+  
 By default CoreData run in main thread, a better practice is to run it in privateContext that means background.
 
 ![image](https://github.com/apaladines-techconsulting/Interview_Questions/assets/138136886/de399225-5933-4f5b-afd2-0cc90ac5c10b)
@@ -439,7 +440,8 @@ required initializers
 - `.merge` -> To mix multiple streams.
 - `.debounce` -> to delay responses.
 - `.throttle` -> limits the rate of values emitted by a publisher.
-
+- `.zip` -> ???
+- 
 ## ArchitecturePatterns -> One Single for whole project:
 1. MVC
 2. MVVM -> Model View ViewModel
