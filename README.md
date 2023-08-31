@@ -35,6 +35,15 @@ With my technical depth and more than 12 years in IT, I am ready to bring substa
     - GirHub
     - GDC
 
+## iOS app states
+- Not Running: The app is not launched or is terminated. This is the initial state when the app is not running at all.
+- Inactive: The app is in the foreground but not receiving events, such as when a call or text message arrives, or when the user switches to the app switcher.
+- Active: The app is in the foreground and actively receiving events. This is the normal state when the app is being interacted with by the user.
+- Background: The app is in the background but still running. It can continue to execute tasks, update its interface, and perform various operations. However, it has limited time to complete tasks before being suspended.
+- Suspended: The app is in the background but is not executing code. It remains in memory, but its resources are reclaimed if needed. When the user returns to the app, it typically needs to be relaunched.
+- Terminated: The app has been terminated by the system or the user. It's no longer running in the background or suspended.
+
+
 ## TTD & BDD:
 - TDD = write test first then functionality
 - BDD = write functionality and then test cases
