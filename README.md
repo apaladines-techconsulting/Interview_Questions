@@ -23,7 +23,7 @@ With my technical depth and more than 12 years in IT, I am ready to bring substa
 # Exp:
 - Northwest Bank, Warren, Pennsylvania - 02/2022 – Current (Remote).
     - Redesign from UIKit to swiftUI
-    - MVVM  -> Async Await; Combine; prop wrappers;
+    -   -> Async Await; Combine; prop wrappers;
     - SDLC end-to-end
     - LLDB statements, register read, po, bt, expr
     - Test coverage of the App from 60% to 70%
@@ -330,8 +330,14 @@ Semaphore is used in concurrent programming. Acts as a gatekeeper, regulating th
 
 ## Generics:
 Generics represent any tyoe of data you define to mqke reusable and modular the functionality of the code.
-You can ad restrictions like T: Decodable to specify a particular behaviour to the function.
+You can ad restrictions like T: Decodable to specify a particular behaviour to the function. 
 
+Advantages:
+- Reusability: Write code that works with different types.
+- Type Safety: Avoid runtime errors by enforcing type constraints.
+- Cleaner Code: Reduce code duplication and improve code readability.
+- Performance: Generics can be more efficient than using protocols and casting.
+    
 ## local storage options in iOS:
 1. UserDefaults => @AppStorage -  It is used to store small information in app like bool, string, int, double, etc. Just simple values.
 2. KeyChain => To store critical sensitive user data like password, certificates, cryptographyc keys and so on.
@@ -462,7 +468,36 @@ required initializers
 4. MVP -> Model View Presenter (this is an old arq not much used now)
 5. TCA -> Clean Architecture
 6. VIPER -> View Interactor Presenter Entity Router
+ 
+### MVVM:
+MVVM is a design pattern used in iOS development to separate the concerns of your application into three distinct components:
+- Model: Represents the data and business logic.
+- View: Represents the user interface.
+- ViewModel: Acts as an intermediary between the Model and the View. It transforms the data from the Model into a format that the View can display and also handles user interactions.
 
+#### Advantages of MVVM:
+- Separation of Concerns: MVVM cleanly separates the concerns of an application. The Model handles the data and business logic, the ViewModel handles the presentation logic, and the View is responsible for displaying the data. This separation makes the codebase more organized and maintainable.
+- Testability: MVVM makes it easier to write unit tests for your application. The ViewModel can be tested independently of the View, as it doesn't have any direct references to UI elements. This improves test coverage and helps catch bugs early in the development process.
+- Reusability: ViewModels can be reused across multiple views or view controllers. This is especially useful in scenarios where different parts of the app need to display the same data differently.
+- Flexibility and Adaptability: MVVM allows for easy adaptation to changes in the UI or business logic. As UI requirements change, you can update the ViewModel without affecting the Model or the View. This flexibility is essential for handling evolving app requirements.
+- Binding: MVVM often leverages data binding frameworks like Combine or RxSwift, which allow automatic synchronization of the ViewModel and View. This reduces boilerplate code for updating UI elements in response to changes in the underlying data.
+- Improved Collaboration: MVVM promotes collaboration between designers and developers. Designers can work on the layout and appearance of the View independently of the ViewModel and Model, allowing for parallel development.
+
+#### Disadvantages of MVVM:
+- Complexity: MVVM can introduce some complexity to the codebase, especially in larger applications. It requires creating and managing ViewModel objects for each View, which may increase code size and complexity.
+- Learning Curve: Developers new to MVVM may face a learning curve when understanding how to structure and maintain ViewModel code.
+- Overhead: In simpler apps or when used incorrectly, MVVM can introduce unnecessary overhead. Not every app requires the level of separation that MVVM provides, and using it inappropriately can lead to code bloat.
+- Potential for Boilerplate: Depending on the platform and libraries used, there can be some boilerplate code involved in setting up data binding or communication between the ViewModel and View.
+- Performance Considerations: MVVM relies on data binding, which can have performance implications if not used carefully. Excessive updates to the View can impact performance, so it's important to monitor and optimize as needed.
+
+### Retain Cycle:
+A retain cycle occurs when two or more objects reference each other strongly, preventing them from being deallocated by the memory management system. In Swift, this often happens when using closures or delegate patterns.
+How to Resolve Retain Cycles and Memory Leaks:
+To resolve retain cycles and memory leaks:
+- Use weak or unowned references in closures to prevent strong reference cycles.
+- Use Instruments in Xcode to identify memory leaks.
+- Be mindful of strong references within closures, especially when capturing self.
+    
 ### Design Patterns:
 Group of smaller related classes, modules or sub functionalities inside one project. In one project can be multiple Design Patterns used:
 
@@ -519,10 +554,9 @@ It is used to send data back to the class that is implementing the closure. they
     2. Observables
     3. Operators
 
-## Memory Management:
+## Memory Management ARC - Automatic Reference Counting:
 Whow iOS Does Memory Management
- ARC - Automatic Reference Counting
-
+ 
  Objective and swift it works automatically
 
  Initially the Reference count will mbe zero
@@ -539,6 +573,14 @@ Whow iOS Does Memory Management
 
  It keeps the track of references to objects and releases them when they are no longer needed.
 
+ARC (Automatic Reference Counting):
+Is a memory management mechanism used in Swift to automatically manage memory by keeping track of references to objects. When there are no more strong references to an object, it gets deallocated.
+
+Strong, Weak, Unowned References:
+- `Strong`: Keeps a strong reference to an object, preventing it from being deallocated.
+- `Weak`: Maintains a weak reference to an object, allowing it to be deallocated when no strong references exist.
+- `Unowned`: Similar to weak but assumes the reference won't be nil, and it doesn't keep the reference count.
+    
 ### Type of reference variables:
 - strong -> This is the default attribute. It keeps those objects alive in memory.
 - weak -> When we don't want to have ownership of that object. To avoid cycle issues as well.
