@@ -429,7 +429,7 @@ required initializers
 
  3. Operator -> This are methods that are called by Publisher they process the data in format in which subscriber needs
 
- We can also chain multiple operators on a Publisher.
+ We can also chain multiple **`operators`** on a Publisher.
  - Advantages of using Combine Framework:
     1. Your Async code is more simplified.
     2. Declarative syntax.
@@ -449,7 +449,7 @@ required initializers
      @StateObject -> Only recreates a part of the view
      @ObservedObject -> recreates everything
      
-#### Common higher methods to use in Combine:
+#### Common higher methods (OPERATORS) to use in Combine:
 - `.tryMap` -> To map data.
 - `.decode` -> Parsinng.
 - `.receive` -> Receiving actual output.
@@ -459,10 +459,10 @@ required initializers
 - `.merge` -> To mix multiple streams.
 - `.debounce` -> to delay responses.
 - `.throttle` -> limits the rate of values emitted by a publisher.
-- `.zip` -> ???
+- `.zip` -> Used to combine different responses in one.
 - 
 ## ArchitecturePatterns -> One Single for whole project:
-1. MVC
+1. MVC -> Model ViewController
 2. MVVM -> Model View ViewModel
 3. MVVM-C -> Model View ViewModel Coordinator (Coordinator Pattern)
 4. MVP -> Model View Presenter (this is an old arq not much used now)
