@@ -62,6 +62,67 @@ Collection of possible questions for Senior iOS Devevelpers
     - Polymorphism -> Subclasses can be treated as objects of a common superclass
     - Abstraction -> Interfaces.- protocols
 
+
+## SOLID
+
+S -> `Single Responsibility`: It states that, any function or class should only do one task.
+
+O -> `Open Close Principle1`: Open for extension but closed for modification.
+
+L -> `Liskov Substitution Principle`: Parent class objects should be easily replasable with child or derived object.
+
+I -> `Interface Segregation`: Clients should not be forced to depend upon interfaces they don't requiere. Instead of having one big protocol, divide multiple small protocol.
+
+D -> `Dependency Inversion`:  Different parts of your code should not depend on concrete classes.
+
+ - Liskov
+ ```swift
+class Parent{
+    var data: Data? 
+}
+class Child: Parent {
+
+}
+let data = dataFromService()
+let parent = Parent(data: data)
+let child = Child(data:data)
+ ```
+ 
+- Interface Segregation
+
+Instead of:
+ ```swift
+protocol A {
+    func a()
+    func b()
+    func c()
+    func d()
+    func e()
+}
+```
+
+do this:
+```swift
+
+protocol A {
+    func a()
+    func b()
+    func c()
+}
+protocol A {
+    func d()
+    func e()
+}
+ ```
+ Because we wont need every function in every class that consforms the protocols.
+ If there is a case, we can use `class Parent: A,B { ... }` or `public typealias Codable = Decodable & Encodable` for `class A: Codable`
+ 
+ - Dependency Inversion
+ Send object from outside, not defining objects inside the function, like the networkManager (protocols) that is sent in the init and not instanciated in function.
+
+* Too much abstractions could make the code more complicated instad of facilitating the coding time to developers.
+
+
 ## Dependency injections
 - function injetion
 - parameter injection
@@ -602,68 +663,6 @@ All Business logic will be the center of your core
 
 MVVM vs Clean Architecture
 We can go with mvvm and create a Clean Architecture.
- 
- 
- 
-## SOLID
-
-S -> `Single Responsibility`: It states that, any function or class should only do one task.
-
-O -> `Open Close Principle1`: Open for extension but closed for modification.
-
-L -> `Liskov Substitution Principle`: Parent class objects should be easily replasable with child or derived object.
-
-I -> `Interface Segregation`: Clients should not be forced to depend upon interfaces they don't requiere. Instead of having one big protocol, divide multiple small protocol.
-
-D -> `Dependency Inversion`:  Different parts of your code should not depend on concrete classes.
-
- - Liskov
- ```swift
-class Parent{
-    var data: Data? 
-}
-class Child: Parent {
-
-}
-let data = dataFromService()
-let parent = Parent(data: data)
-let child = Child(data:data)
- ```
- 
-- Interface Segregation
-
-Instead of:
- ```swift
-protocol A {
-    func a()
-    func b()
-    func c()
-    func d()
-    func e()
-}
-```
-
-do this:
-```swift
-
-protocol A {
-    func a()
-    func b()
-    func c()
-}
-protocol A {
-    func d()
-    func e()
-}
- ```
- Because we wont need every function in every class that consforms the protocols.
- If there is a case, we can use `class Parent: A,B { ... }` or `public typealias Codable = Decodable & Encodable` for `class A: Codable`
- 
- - Dependency Inversion
- Send object from outside, not defining objects inside the function, like the networkManager (protocols) that is sent in the init and not instanciated in function.
-
-* Too much abstractions could make the code more complicated instad of facilitating the coding time to developers.
-
 
 # iOS Security:
     1. Data Storage Security
