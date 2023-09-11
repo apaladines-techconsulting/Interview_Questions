@@ -47,7 +47,6 @@ With my technical depth and more than 12 years in IT, I am ready to bring substa
 - Suspended: The app is in the background but is not executing code. It remains in memory, but its resources are reclaimed if needed. When the user returns to the app, it typically needs to be relaunched.
 - Terminated: The app has been terminated by the system or the user. It's no longer running in the background or suspended.
 
-
 ## TTD & BDD:
 - TDD = write test first then functionality
 - BDD = write functionality and then test cases
@@ -61,7 +60,6 @@ Collection of possible questions for Senior iOS Devevelpers
     - Inheritance -> Creating sub classes from superclass
     - Polymorphism -> Subclasses can be treated as objects of a common superclass
     - Abstraction -> Interfaces.- protocols
-
 
 ## SOLID
 
@@ -127,7 +125,6 @@ protocol A {
 - function injetion
 - parameter injection
 - constructor injection
-
 
 ## Protocols:
 Protocols are a blueprint to implement methods, properties or requirements that a class, struct, or enum must adopt. They have no implementation of methods. The only case is for additional functionalities in an extension of the protocol.
@@ -219,7 +216,27 @@ print("Total Price: $\(totalPrice)") // Output: Total Price: $50.0
 `Non-escaping closures:`
 A non-escaping closure is a closure that is guaranteed to be executed before the function it's passed to returns. In other words, the closure is not allowed to outlive the function that it's passed to. Non-escaping closures are the default behavior in Swift, and you don't need to explicitly mark them as non-escaping.
 
+## ANY
+#### Any:
+- Any is a type that represents values of any type, including instances of classes, structs, enums, and other types.
+- It is a powerful and flexible way to work with values of unknown types or to create functions or data structures that can work with a variety of types.
+- For example, you can use Any to store values of different types in a collection like an array or a dictionary.
 
+#### AnyObject:
+- AnyObject is a protocol that represents instances of classes (reference types).
+- It can be used to work with class instances when you need to interact with objects of unknown classes.
+- AnyObject is often used in Objective-C interoperability scenarios.
+
+#### AnyClass:
+- AnyClass is an older Swift construct that represents a class type, specifically a metatype (the type of a class itself).
+- It is typically used in Objective-C interoperability to work with class types.
+- In modern Swift, you can often use Type.Type instead of AnyClass.
+
+`AnyHashable`:
+    AnyHashable is a type-erased wrapper around a hashable value.
+    It allows you to store values of different types in a collection (e.g., a dictionary) where the keys need to conform to the Hashable protocol.
+    AnyHashable can be used when you want to store values of different types in a dictionary without knowing their specific types in advance.
+        
 ## Swift vs Objective-C:
 Was developed from C and C++
 
