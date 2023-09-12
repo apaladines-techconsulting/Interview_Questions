@@ -47,10 +47,6 @@ With my technical depth and more than 12 years in IT, I am ready to bring substa
 - Suspended: The app is in the background but is not executing code. It remains in memory, but its resources are reclaimed if needed. When the user returns to the app, it typically needs to be relaunched.
 - Terminated: The app has been terminated by the system or the user. It's no longer running in the background or suspended.
 
-## TTD & BDD:
-- TDD = write test first then functionality
-- BDD = write functionality and then test cases
-
 # Interview_Questions
 Collection of possible questions for Senior iOS Devevelpers
 
@@ -813,13 +809,19 @@ Fastlane -> 3rd party tool for continuous delivery.
         fastlane/Fastlane directory and file.
 
 
-## Test Testing TDD (test driven)BDD
+## TTD & BDD - Tests
+- TDD = write test first then functionality
+- BDD = write functionality and then test cases
+
 TDD Test Driven Development:
 XCTest
-    Stubbing, bocking, Faking
+    Stubbing, bocking, Faking.
+    For api calls we use `XCTestExpectation` and `wait(for: [expectation], timeout: waitDuration)`
+    Defining what will be test, expectation, fulfill assertions and wait if necessary.
 
 BDD: Behavioural Driven Development:
     Quick and Nimble -> Start with given (setting up) when () and then ()
+    More for Testers than developers. It's a higher level Testing.
 
 ## SwiftUI vs Swift
 - Everything made with structs Tsack memory (faster) instead of classes Heat memory
