@@ -562,45 +562,44 @@ Group of smaller related classes, modules or sub functionalities inside one proj
  2. `Behavieour Design Patterns` -> How your projects are going to comunicate or pass data around or bahave.
  3. `Structural Design Patterns` -> How you assemble objects and classes into a larger group.
 
- A. Creational Design
-    1. Singleton
-    2. Factory Design Pattern / Factory Method
-    3. Builder
-    4. Prototype
+ - Creational Design:
+     1. Singleton
+     2. Factory Design Pattern / Factory Method
+     3. Builder
+     4. Prototype
 
- B. Behavioural Design Pattern
-    1. Observer Pattern
-    2. Chain of responsibility
-    3. Memento
-    4. Iterator
+ - Behavioural Design Pattern
+     1. Observer Pattern
+     2. Chain of responsibility
+     3. Memento
+     4. Iterator
 
- C. Structural Design Pattern
+ - Structural Design Pattern
     1. Adaptor pattern (Protocol delegate)
     2. Decorator
     3. Facade Design Pattern
 
-
- Singleton Pattern
+### Singleton Pattern:
  It ensures that only one object of class will be there thoroutghout our app
- It provides global access to that instance
+ It provides global access to that instance.
+- Examples:
+    - DataManager
+    - AuthenticationManager
+    - FileDownloaderManager
+    - AnalyticsManager
 
- DataManager
- AuthenticationManager
- FileDownloaderManager
- AnalyticsManager
+- Advantages:
+    - Make it easy.
+    - Gives global access.
 
- Advantages:
-    make it easy
-    gives global access
+- AntiDesign Pattern
+    - Cannot have injeritance.
+    - Needs to be used carefully.
+    - Cannot write test cases.
 
- AntiDesign Pattern
-    cannot have
-    needs to be used carefully
-    cannot write test cases
-
-## Closure pattern:
-Is just the same closures we use as parameters or variables.
-It is used to send data back to the class that is implementing the closure. they can be scapping and nonScapping.
+### Closure pattern:
+- Is just the same closures we use as parameters or variables.
+- It is used to send data back to the class that is implementing the closure. they can be scapping and nonScapping.
 
 #### RXSwift and RXCocoaTouch:
 - Major components:
@@ -608,7 +607,7 @@ It is used to send data back to the class that is implementing the closure. they
     2. Observables
     3. Operators
 
-##  Repository Pattern: 
+## Repository Pattern: 
 This provides an abstraction layer between the data storage (API / CoreData) and rest of aplication
  
 ## Clean Architecture:
@@ -624,31 +623,31 @@ MVVM vs Clean Architecture
 We can go with mvvm and create a Clean Architecture.
 
 ## Memory Management ARC - Automatic Reference Counting:
-Whow iOS Does Memory Management
+_**How iOS Does Memory Management?**_
  
- Objective and swift it works automatically
+ Objective and swift it works automatically.
 
- Initially the Reference count will mbe zero
-
+ Initially the **Automatic Reference Counting** will be zero.
+```swift
  var gretings = "Hello World"
  Reference count = Reference count +1
  Reference count = 1
 
  gretings = nil
- Reference count = Reference count -1
-
- Reference count = 0
- Thats when OS free that block of memory
-
+ //Reference count = Reference count -1
+ //Reference count = 0
+ //Thats when OS free that block of memory
+```
  It keeps the track of references to objects and releases them when they are no longer needed.
 
-ARC (Automatic Reference Counting):
-Is a memory management mechanism used in Swift to automatically manage memory by keeping track of references to objects. When there are no more strong references to an object, it gets deallocated.
+### ARC (Automatic Reference Counting):
+Is a memory management mechanism used in Swift to automatically manage memory by keeping track of references to objects. 
+When there are no more strong references to an object, it gets deallocated.
 
-Strong, Weak, Unowned References:
-- `Strong`: Keeps a strong reference to an object, preventing it from being deallocated.
-- `Weak`: Maintains a weak reference to an object, allowing it to be deallocated when no strong references exist.
-- `Unowned`: Similar to weak but assumes the reference won't be nil, and it doesn't keep the reference count.
+**Strong, Weak, Unowned References:**
+- _**Strong:**_ Keeps a strong reference to an object, preventing it from being deallocated. ARC +1
+- _**Weak:**_ Maintains a weak reference to an object, allowing it to be deallocated when no strong references exist. ARC +0
+- _**Unowned:**_ Similar to weak but assumes the reference won't be nil, and it doesn't keep the reference count. ARC +0
     
 ### Type of reference variables:
 - strong -> This is the default attribute. It keeps those objects alive in memory.
