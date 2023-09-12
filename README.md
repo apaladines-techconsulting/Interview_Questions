@@ -211,6 +211,9 @@ print("Total Price: $\(totalPrice)") // Output: Total Price: $50.0
 `Non-escaping closures:`
 A non-escaping closure is a closure that is guaranteed to be executed before the function it's passed to returns. In other words, the closure is not allowed to outlive the function that it's passed to. Non-escaping closures are the default behavior in Swift, and you don't need to explicitly mark them as non-escaping.
 
+`Escaping closures:`
+Is a closure that is passed as an argument to a function but is allowed to outlive the function's execution.
+
 ## ANY
 #### Any:
 - Any is a type that represents values of any type, including instances of classes, structs, enums, and other types.
@@ -442,10 +445,10 @@ By default CoreData run in main thread, a better practice is to run it in privat
 ![image](https://github.com/apaladines-techconsulting/Interview_Questions/assets/138136886/6e4c2f3a-4a80-4d40-b0fe-50053a40ee79)
 
 #### Deletion Rules in CoreData
-- No Action
-- Nullify
-- Cascade
-- Deny
+- No Action: We have a category that contains several notes. If the category is deleted, the notes are not notified of this event. The notes on the other end of the relationship believe that they are still associated with the deleted category.
+- Nullify: If a category has several notes and the category is deleted, the relationships pointing from the notes to the category are nullified. This is the default delete rule.
+- Cascade: If a note should always have a category, the deletion of a category should automatically delete the notes associated with that category.
+- Deny: If a note is tied to a category, the category cannot be deleted until it is not tied no any note.
 
 ## App Life cycle States:
 - `Not Running:`
