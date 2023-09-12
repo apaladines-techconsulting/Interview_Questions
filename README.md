@@ -288,14 +288,12 @@ nonatomic -> NONThread Safe: Multiple trheads can change the value
 - Objects can be null
 - Objects can be nil
 
-
-## Computed property and Lazy Property
-//COMPLETE
-
 ## Struct vs Classes:
 `Structs` are value type, meaning they can be copied and passed arround the code. Modifications in a copy don't affect the original. They do not support iheritance and are suitable for simple data models.
 Trait safe one value can be acessed at time.
 Structs are faster because they are put as stock in memory
+
+![image](https://github.com/apaladines-techconsulting/Interview_Questions/assets/138136886/97f2b4cb-71d6-4e8d-9454-beaafb3634ed)
 
 
 `Classes` are reference type meaning multiple variables can point to the same object in memory, have inheritance, they are deallocable and often used for complex data models. 
@@ -478,8 +476,6 @@ When we receive a call, the application is get suspended, stoping all inside the
     The app is not running at all, not in memory, and not receiving any events.
     Only a terminated app can be in this state.
 
-## Declarative and imperative codibg
-
 ## Initializers or Inits
 memberwise (structs)
 default initializers
@@ -487,7 +483,6 @@ failable required
 required initializers
 
 ## Combine:
- 
  It is a native framework made by Apple for Reactive development programming introduced in iOS 13.0
  Before Combine, there were two frameworks, RXSwift and RXCocoaTouch.
  You can use combine to make the code simpler and reusable.
@@ -541,7 +536,8 @@ required initializers
 - `.debounce` -> to delay responses.
 - `.throttle` -> limits the rate of values emitted by a publisher.
 - `.zip` -> Used to combine different responses in one.
-- 
+- `.removeDuplicates` -> Removes any duplicated elements in publisher.
+
 ## ArchitecturePatterns -> One Single for whole project:
 1. MVC -> Model ViewController
 2. MVVM -> Model View ViewModel
@@ -604,7 +600,6 @@ Group of smaller related classes, modules or sub functionalities inside one proj
     3. Facade Design Pattern
 
 
-
  Singleton Pattern
  It ensures that only one object of class will be there thoroutghout our app
  It provides global access to that instance
@@ -623,8 +618,6 @@ Group of smaller related classes, modules or sub functionalities inside one proj
     needs to be used carefully
     cannot write test cases
 
-
-
 ## Closure pattern:
 Is just the same closures we use as parameters or variables.
 It is used to send data back to the class that is implementing the closure. they can be scapping and nonScapping.
@@ -634,6 +627,21 @@ It is used to send data back to the class that is implementing the closure. they
     1. Schedulers
     2. Observables
     3. Operators
+
+##  Repository Pattern: 
+This provides an abstraction layer between the data storage (API / CoreData) and rest of aplication
+ 
+## Clean Architecture:
+Its like Onion (multiple layers) or Layer Archiqtecture.
+All Business logic will be the center of your core
+ 
+- Entities -> This is our business logic and are at core of clean arch
+- Uses Cases -> (interactor / Repository) -> Will contain the rules or flow of data between entities.
+- Interface Adapter -> (Presenters, Controllers and ViewModels) 
+- Frameworks and Drivers -> UI, Database, Webservice, Analytics and all external third party frameworks.
+
+MVVM vs Clean Architecture
+We can go with mvvm and create a Clean Architecture.
 
 ## Memory Management ARC - Automatic Reference Counting:
 Whow iOS Does Memory Management
@@ -669,20 +677,11 @@ Strong, Weak, Unowned References:
 
  Retain cycle -> When one strong object retains another strong object, then, it creates retain cycle issues of memory leaks.
 
-##  Repository Pattern: 
-This provides an abstraction layer between the data storage (API / CoreData) and rest of aplication
- 
-## Clean Architecture:
-Its like Onion (multiple layers) or Layer Archiqtecture.
-All Business logic will be the center of your core
- 
-- Entities -> This is our business logic and are at core of clean arch
-- Uses Cases -> (interactor / Repository) -> Will contain the rules or flow of data between entities.
-- Interface Adapter -> (Presenters, Controllers and ViewModels) 
-- Frameworks and Drivers -> UI, Database, Webservice, Analytics and all external third party frameworks.
+## Declarative and imperative codibg:
 
-MVVM vs Clean Architecture
-We can go with mvvm and create a Clean Architecture.
+## Computed property and Lazy Property:
+- `Lazy property`: Is a property that is not calculated or initialized until the first time it is accessed. It's value is cached for the next uses meaning that it wont be computed again.
+- `Computed property`: Is a property that does not store a value directly but provides a getter and an optional setter through which you can compute or derive its value on-the-fly.
 
 # iOS Security:
     1. Data Storage Security
