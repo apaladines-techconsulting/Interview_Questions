@@ -238,55 +238,43 @@ Is a closure that is passed as an argument to a function but is allowed to outli
 ## Swift vs Objective-C:
 Was developed from C and C++
 
-`Swift` is a modern and expressive language with strong typing `(variables can be explicitly declared)` and Type Inference where swift's compiler can infer the data type of a variable based on its initial value. Error handling and optionals to enhance code reliability. ARC (Automatic Reference Counting) meaning automatic memory management.
-typoe safety, type inference, generics, 
-`Objective-C` is an established, dynamic language that integrates well with C. It offers powerful runtime features and is suitable for legacy projects. It can also be gradually adopted in Swift projects. 
-
-Objg: Reference type, we need to manage the memory by ourselfs
-Swift: Reference and 
-
-
-OOPS on C and CPP
-
-###### Objc:
-- Everything is classes, theres no structs
-- protocols
-- category
-- Enum -> But used with Int only
-
-- Reference Type
-    - NSString
-    - NSArray
-    - NSDictionary
-
-NSNameSpace
-
-Actor -> Only one trhead can change the value
-weak -> 
-strong ->
-atomic -> Thread Safe: Only one trhead can change the value
-nonatomic -> NONThread Safe: Multiple trheads can change the value
-
-##### Swift:
-* TypeSafety -> `var name = 10, true` We cannot assign different types to the same variable.
-
-* TypeInference -> `var name = "ABC"`
-
-- Optionals -> Internally it is an enum with two states (none and nil).
-- Structs
-- Generics
-- Closures
-- Higher Oreder Funcions (map, filter, sort)
-- Extensions
-
-- Value Types:
+`Swift`:
+- Is a modern and expressive language with strong typing `(variables can be explicitly declared)` and Type Inference where swift's compiler can infer the data type of a variable based on its initial value.
+- Error handling and optionals to enhance code reliability.
+- ARC (Automatic Reference Counting) meaning automatic memory management.
+- Type safety, type inference, generics.
+- Managers reference and Value types.
+- `Characteristics:`
+  - Type Safety -> `var name = 10, true` We cannot assign different types to the same variable.
+  - Type Inference -> `var name = "ABC"`
+  - Optionals -> Internally it is an enum with two states (none and nil).
+  - Structs
+  - Generics
+  - Closures
+  - Higher Oreder Funcions (map, filter, sort)
+  - Extensions 
+  - Value Types:
     - Array
     - String
     - Dictionary
+   
 
+`Objective-C`
+- Is an established, dynamic language that integrates well with C.
+- It offers powerful runtime features and is suitable for legacy projects.
+- It can also be gradually adopted in Swift projects.
+- Managers reference type, we need to manage the memory by ourselfs.
+- `Characteristics:`
+    - Everything is classes, theres no structs
+    - protocols
+    - category
+    - Enum -> But used with Int only
+        - Reference Type:
+            - NSString
+            - NSArray
+            - NSDictionary
+    - NSNameSpace
 
-- Objects can be null
-- Objects can be nil
 
 ## Struct vs Classes:
 `Structs` are value type, meaning they can be copied and passed arround the code. Modifications in a copy don't affect the original. They do not support iheritance and are suitable for simple data models.
