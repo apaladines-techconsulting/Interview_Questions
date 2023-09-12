@@ -678,7 +678,9 @@ Strong, Weak, Unowned References:
  Retain cycle -> When one strong object retains another strong object, then, it creates retain cycle issues of memory leaks.
 
 ## Declarative and imperative codibg:
-
+- `Imperative`: Swift -> Is an approach where you describe the sequence of actions and changes that need to occur to create and update the user interface.
+- `Declarative`: SwiftUI -> Is an approach where you describe what you want the user interface to look like based on its current state, without specifying the step-by-step instructions for achieving that state.
+- 
 ## Computed property and Lazy Property:
 - `Lazy property`: Is a property that is not calculated or initialized until the first time it is accessed. It's value is cached for the next uses meaning that it wont be computed again.
 - `Computed property`: Is a property that does not store a value directly but provides a getter and an optional setter through which you can compute or derive its value on-the-fly.
