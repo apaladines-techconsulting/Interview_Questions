@@ -554,14 +554,6 @@ MVVM is a design pattern used in iOS development to separate the concerns of you
 - Overhead: In simpler apps or when used incorrectly, MVVM can introduce unnecessary overhead. Not every app requires the level of separation that MVVM provides, and using it inappropriately can lead to code bloat.
 - Potential for Boilerplate: Depending on the platform and libraries used, there can be some boilerplate code involved in setting up data binding or communication between the ViewModel and View.
 - Performance Considerations: MVVM relies on data binding, which can have performance implications if not used carefully. Excessive updates to the View can impact performance, so it's important to monitor and optimize as needed.
-
-### Retain Cycle:
-A retain cycle occurs when two or more objects reference each other strongly, preventing them from being deallocated by the memory management system. In Swift, this often happens when using closures or delegate patterns.
-How to Resolve Retain Cycles and Memory Leaks:
-To resolve retain cycles and memory leaks:
-- Use weak or unowned references in closures to prevent strong reference cycles.
-- Use Instruments in Xcode to identify memory leaks.
-- Be mindful of strong references within closures, especially when capturing self.
     
 ### Design Patterns:
 Group of smaller related classes, modules or sub functionalities inside one project. In one project can be multiple Design Patterns used:
@@ -663,7 +655,13 @@ Strong, Weak, Unowned References:
 - weak -> When we don't want to have ownership of that object. To avoid cycle issues as well.
 - unowned -> Similar to weak but complusionb is that it should always have data. otherwise it can cause crashes in app.
 
- Retain cycle -> When one strong object retains another strong object, then, it creates retain cycle issues of memory leaks.
+### Retain Cycle:
+A retain cycle occurs when two or more objects reference each other strongly, preventing them from being deallocated by the memory management system. In Swift, this often happens when using closures or delegate patterns.
+How to Resolve Retain Cycles and Memory Leaks:
+To resolve retain cycles and memory leaks:
+- Use weak or unowned references in closures to prevent strong reference cycles.
+- Use Instruments in Xcode to identify memory leaks.
+- Be mindful of strong references within closures, especially when capturing self.
 
 ## Declarative and imperative codibg:
 - `Imperative`: Swift -> Is an approach where you describe the sequence of actions and changes that need to occur to create and update the user interface.
