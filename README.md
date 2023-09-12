@@ -118,9 +118,8 @@ protocol A {
 
 
 ## Dependency injections
-- function injetion
-- parameter injection
-- constructor injection
+- function injetion: When sending dependencies as parameters in a function that only will be used there.
+- constructor injection: When sending dependencies as init parameters to ensure we will have them for any task inside the initialized object.
 
 ## Protocols:
 Protocols are a blueprint to implement methods, properties or requirements that a class, struct, or enum must adopt. They have no implementation of methods. The only case is for additional functionalities in an extension of the protocol.
