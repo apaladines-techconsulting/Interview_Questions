@@ -498,8 +498,16 @@ required initializers
   2. @ObservedObject
   3. @StateObject
   4. @Binding
-  5. @EnvironmentObject
-  6. ObservableObject -> This is the protocol to create
+  5. @Environment
+  6. @EnvironmentObject
+  7. @FocusState
+  8. @Published
+  9. @FetchRequest
+  10. @AppStorage
+  11. @ViewBuilder
+  12. @FetchedObject
+  13. @MainActor
+  14. @Namespace
 
  Difference between
      @StateObject -> Only recreates a part of the view
