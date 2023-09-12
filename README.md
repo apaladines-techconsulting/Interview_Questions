@@ -446,6 +446,11 @@ By default CoreData run in main thread, a better practice is to run it in privat
 
 ![image](https://github.com/apaladines-techconsulting/Interview_Questions/assets/138136886/6e4c2f3a-4a80-4d40-b0fe-50053a40ee79)
 
+#### Deletion Rules in CoreData
+- No Action
+- Nullify
+- Cascade
+- Deny
 
 ## App Life cycle States:
 - `Not Running:`
@@ -764,13 +769,6 @@ func encryptDataUsingCryptoKit() {
     let sha512Hash = SHA512.hash(data: dataTOEncrypt)
 }
 ```
-SwiftUI vs Swift
-- Everything made with structs Tsack memory (faster) instead of classes Heat memory
-- More updated
-- We use code instead of UIKit (storyboards)
-- Protocol oriented programming instead of Swift that is oop
-- We dont have constraints nor autolayout in swiftUI
-
 
 ## 3. Jailbroken Detection:
 There is a preatty standard file that helps us with this task `JailbrokenCheck.swift`
@@ -823,3 +821,40 @@ XCTest
 BDD: Behavioural Driven Development:
     Quick and Nimble -> Start with given (setting up) when () and then ()
 
+## SwiftUI vs Swift
+- Everything made with structs Tsack memory (faster) instead of classes Heat memory
+- More updated
+- We use code instead of UIKit (storyboards)
+- Protocol oriented programming instead of Swift that is oop
+- We dont have constraints nor autolayout in swiftUI
+
+## Limitations of swiftUI
+- Platform Availability:
+        SwiftUI is primarily designed for Apple platforms, including iOS, macOS, watchOS, and tvOS. It does not provide cross-platform support for non-Apple platforms like Android or web.
+
+- iOS Version Support:
+        SwiftUI is only available on iOS 13.0 and later, macOS 10.15 and later, watchOS 6.0 and later, and tvOS 13.0 and later. This means that apps targeting older iOS versions cannot fully utilize SwiftUI.
+
+- Learning Curve:
+        While SwiftUI simplifies many aspects of UI development, it also introduces a learning curve, especially for developers who are familiar with UIKit or AppKit. SwiftUI's declarative syntax and architecture may take some time to grasp.
+
+- Limited Third-Party Library Support:
+        SwiftUI does not have the extensive ecosystem of third-party libraries and components that UIKit has. Developers may need to build custom UI components or work with UIKit in conjunction with SwiftUI for certain scenarios.
+
+- Missing Features:
+        As of my last knowledge update, SwiftUI lacked some features and components that were available in UIKit. For example, complex collection view layouts, custom camera views, or highly customized gesture recognizers might require UIKit integration.
+
+- Incomplete macOS Support:
+        While SwiftUI is available for macOS, it does not cover all macOS-specific UI elements and features. Developers may need to fall back to AppKit for some desktop-specific UI needs.
+
+- Backward Compatibility:
+        SwiftUI does not provide backward compatibility with older iOS versions, which means developers may need to maintain separate code paths for SwiftUI and UIKit/AppKit when targeting a wide range of iOS/macOS versions.
+
+- Performance:
+        While SwiftUI is designed to be performant, it may not always offer the same level of fine-grained control over performance optimization as UIKit, especially in scenarios where performance is critical.
+
+- Debugging and Tooling:
+        Debugging SwiftUI-based applications, especially complex ones, may be more challenging compared to traditional UIKit apps. At the time of my last update, the tooling and debugging support for SwiftUI were evolving.
+
+- Limited Cross-Platform Support:
+        Although SwiftUI supports multiple Apple platforms, achieving full cross-platform development (e.g., iOS and macOS) with shared code and UI can still be challenging due to platform-specific differences.
