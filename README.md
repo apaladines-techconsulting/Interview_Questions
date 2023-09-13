@@ -108,10 +108,13 @@ protocol A {
 
 * Too much abstractions could make the code more complicated instad of facilitating the coding time to developers.
 
-
-## Dependency injections
-- function injetion: When sending dependencies as parameters in a function that only will be used there.
-- constructor injection: When sending dependencies as init parameters to ensure we will have them for any task inside the initialized object.
+## Dependency injections (5 types)
+- 1. Method Injection: When sending dependencies as parameters in a function that only will be used there.
+- 2. Constructor Injection: When sending dependencies as init parameters to ensure we will have them for any task inside the initialized object.
+- 3. Property Injection: Dependencies are set through public properties of the class
+- 4. Interface injection: This involves defining a protocol with setters for dependencies.
+- 5. Ambient Context: Practically is a Singleton whe we expose properties and moethods.
+- 6. Extract and override: Is a technique used for testing and mocking dependencies in unit tests. It allows you to replace real dependencies with controlled, predictable substitutes.
 
 ## Protocols:
 Protocols are a blueprint to implement methods, properties or requirements that a class, struct, or enum must adopt. They have no implementation of methods. The only case is for additional functionalities in an extension of the protocol.
