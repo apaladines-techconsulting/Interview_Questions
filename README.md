@@ -271,16 +271,23 @@ Was developed from C and C++
     - NSNameSpace
 
 
-## Struct vs Classes:
-`Structs` are value type, meaning they can be copied and passed arround the code. Modifications in a copy don't affect the original. They do not support iheritance and are suitable for simple data models.
-Trait safe one value can be acessed at time.
-Structs are faster because they are put as stock in memory
+## Struct vs Classes (class vs struct):
+`Structs`: 
+- value type, meaning they can be copied and passed arround the code.
+- Modifications in a copy don't affect the original.
+- They do not support iheritance and are suitable for simple data models.
+- Thread safe one value can be acessed at time.
+- Structs are faster because they are put as stock in memory
+- Doesn't have inheritance
 
 ![image](https://github.com/apaladines-techconsulting/Interview_Questions/assets/138136886/97f2b4cb-71d6-4e8d-9454-beaafb3634ed)
 
 
-`Classes` are reference type meaning multiple variables can point to the same object in memory, have inheritance, they are deallocable and often used for complex data models. 
-Not trait, multiple values can be accessed at time.
+`Classes`:
+- Reference type meaning multiple variables can point to the same object in memory.
+- Have inheritance.
+- They are deallocable and often used for complex data models.
+- Not Thread safe, multiple threads can accesess to the object at the same time.
 
 ## Value Type vs Reference Type:
 `Value Type`:
