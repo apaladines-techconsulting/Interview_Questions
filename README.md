@@ -722,16 +722,16 @@ we are adding an extra layer of security to our app's network communications by 
 2. Public Key Pinning
 
  1. Certificate Pinning:
-    Create server trust
-    Certificate
-    SSL Prolicy for domain name check
-    evaluate server Certificate
-    local Certificate
-    Comparing data of local an remote server certificates
+    - Create server trust
+    - Certificate
+    - SSL Prolicy for domain name check
+    - evaluate server Certificate
+    - local Certificate
+    - Comparing data of local an remote server certificates
 
  2. The public key pinning:
-    a. priate jey
-    b. multiple public key
+    - a. priate key
+    - b. multiple public key
 
 #### 2. ATS -> App Transport Security: By default requires https request.
 - It doesn't allow any http connections happen in your app.
