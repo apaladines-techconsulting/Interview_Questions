@@ -1,6 +1,13 @@
-First of all, we have to know that profile is how the iPhone will recognize a bluetooth enabled device.
+First of all, we have to know that peripheral is the object iOS will recognize a bluetooth enabled device.
 Inside each profile, we can se the information of each device our phone is capturing via bluetooth.
 
 Example image:
 
-![image](https://github.com/apaladines-techconsulting/Interview_Questions/assets/138136886/03373996-dc66-45b5-8828-7927b66fafc3)
+<img height="480" alt="image" src="https://github.com/apaladines-techconsulting/Interview_Questions/assets/138136886/03373996-dc66-45b5-8828-7927b66fafc3">
+
+source: https://www.allaboutcircuits.com/technical-articles/att-and-gatthow-bluetooth-le-devices-store-data/
+
+
+<img width="720" alt="image" src="https://github.com/apaladines-techconsulting/Interview_Questions/assets/138136886/2cf0c84b-7419-4463-bc30-8b7168a1aa51">
+
+Source: https://youtu.be/HkWG1Iyx0zs?si=x8X92SUez2Trneh8&t=445 
