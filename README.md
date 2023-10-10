@@ -108,6 +108,18 @@ protocol A {
 
 * Too much abstractions could make the code more complicated instad of facilitating the coding time to developers.
 
+## Difference between: as, as? and as!:
+- as:
+    `let object: Subclass = Subclass()`  
+    `let superclassObject = object as Superclass // Upcasting`
+- as?:
+    `let anyValue: Any = 42`  
+    `let intValue = anyValue as? Int // Conditional type casting, returns an optional`
+- as!:
+    `let anyValue: Any = 42`  Difference between: as, as? and as
+    `let intValue = anyValue as? Int // Conditional type casting, returns an optional`
+
+
 ## Dependency injections (3 types)
 - 1. Method Injection: When sending dependencies as parameters in a function that only will be used there.
 - 2. Constructor Injection: When sending dependencies as init parameters to ensure we will have them for any task inside the initialized object.
@@ -532,6 +544,7 @@ required initializers
 - `.throttle` -> limits the rate of values emitted by a publisher.
 - `.zip` -> Used to combine different responses in one.
 - `.removeDuplicates` -> Removes any duplicated elements in publisher.
+- `.reduce` -> Returns the result of combining the elements of the sequence using the given closure.
 
 ## ArchitecturePatterns -> One Single for whole project:
 1. MVC -> Model ViewController
@@ -598,6 +611,11 @@ Group of smaller related classes, modules or sub functionalities inside one proj
 - Advantages:
     - Make it easy.
     - Gives global access.
+      
+- Disadvantages:
+    - Creates hidden dependencies.
+    - Creates Global states because of that it difficult to write unit tests.
+    - Will be alive throughout your app life cycle so it might create memory issues in app.
 
 - AntiDesign Pattern
     - Cannot have injeritance.
