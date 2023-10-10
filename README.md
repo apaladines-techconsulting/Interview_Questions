@@ -150,6 +150,11 @@ struct Car: Vehicle {
 }
 ```
 
+## Protocols in Swift vs Objective-c
+- `Syntax`: **Swift** = protool; **Objc** = @protocol.
+- `Optional methods`: **Swift** = in extension; **Objc** = no extensions, declared as @optional.
+- `Inheritance`: **Swift** = Can inherit from other protocols; **Objc** = Cannot inherit from other protocols.
+
 ## Extension:
 As its word says, they are often used to extend the original functionality of an object.
 Following the open close principle, open to extensions close for editing.
