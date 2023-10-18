@@ -130,6 +130,9 @@ Protocols are a blueprint to implement methods, properties or requirements that 
 Protocols can be composite like Codable that involves `Decodable & Encodable`.
 Mostrly used in SwiftUI but also used in Swift, for NetworkManager to create fake and real managers for better testings. Dependency injections and indirectly used for test cases
 
+## Protocol Oriented Programing
+Is a coding approach that emphatizes the usage of (contracts) protocols facilitating code composition and reuse, including the usage of multiple protocols in one object.
+
 ```swift
 protocol Vehicle {
     var numberOfWheels: Int { get }
