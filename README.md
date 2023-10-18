@@ -126,7 +126,7 @@ protocol A {
 - 3. Property Injection: Dependencies are set through public properties of the class.
 
 ## Protocols:
-Protocols are a blueprint to implement methods, properties or requirements that a class, struct, or enum must adopt. They have no implementation of methods. The only case is for additional functionalities in an extension of the protocol.
+Protocols are a set of methods, properties or requirements that a class, struct, or enum must adopt. They have no implementation of methods. The only case is for additional functionalities in an extension of the protocol.
 Protocols can be composite like Codable that involves `Decodable & Encodable`.
 Mostrly used in SwiftUI but also used in Swift, for NetworkManager to create fake and real managers for better testings. Dependency injections and indirectly used for test cases
 
