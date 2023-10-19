@@ -242,7 +242,7 @@ Is a closure that is passed as an argument to a function but is allowed to outli
 - It is typically used in Objective-C interoperability to work with class types.
 - In modern Swift, you can often use Type.Type instead of AnyClass.
 
-`AnyHashable`:
+#### AnyHashable:
     AnyHashable is a type-erased wrapper around a hashable value.
     It allows you to store values of different types in a collection (e.g., a dictionary) where the keys need to conform to the Hashable protocol.
     AnyHashable can be used when you want to store values of different types in a dictionary without knowing their specific types in advance.
