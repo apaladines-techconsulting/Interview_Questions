@@ -483,6 +483,52 @@ By default CoreData run in main thread, a better practice is to run it in privat
     The app is not running at all, not in memory, and not receiving any events.
     Only a terminated app can be in this state.
 
+## ViewController life cycle:
+- Initialization (init(coder:) or init(nibName:bundle:)): When a view controller is first created, its initialization method is called. You can customize this process by overriding the appropriate init method based on your needs.
+
+- loadView: The view controller's loadView method is called. If you're not using Interface Builder or Storyboards, you can create and assign the view for your view controller in this method.
+
+- viewDidLoad: This method is called after the view has been loaded into memory and is typically used for additional setup, such as configuring UI components and setting initial values.
+
+- viewWillAppear: Before the view appears on the screen, the viewWillAppear method is called. This is a good place to prepare your view for display and perform tasks that need to happen each time the view appears.
+
+- viewDidAppear: After the view has appeared on the screen, the viewDidAppear method is called. It's a suitable place for starting animations or fetching data that should occur after the view is visible.
+
+- viewWillDisappear: When the view is about to disappear from the screen (e.g., due to a navigation action or dismissal), the viewWillDisappear method is called. You can use this method to perform cleanup or save state before the view disappears.
+
+- viewDidDisappear: After the view has disappeared from the screen, the viewDidDisappear method is called. You can use this method for stopping animations or releasing resources associated with the view.
+
+- viewWillLayoutSubviews: Before the view's layout is updated, the viewWillLayoutSubviews method is called. This can be used to prepare for layout changes.
+
+- viewDidLayoutSubviews: After the view's layout has been updated, the viewDidLayoutSubviews method is called. It's an appropriate place to make additional layout adjustments.
+
+- Memory Warnings: If the system encounters a memory warning, the view controller may receive didReceiveMemoryWarning method calls. This is an opportunity to release non-essential resources to free up memory.
+
+- Rotation and Size Changes: When the device's orientation or size changes, the view controller can respond by overriding methods such as viewWillTransition(to:size:).
+
+- Deallocation (deinit): When the view controller is no longer needed and is removed from memory, its deinit method is called. This is where you can perform final cleanup, remove observers, and release any remaining resources.
+
+## AppDelegate lifeCycle: 
+- application(_:willFinishLaunchingWithOptions:): This method is called when the app is about to finish launching but before it's visible on the screen. It's an opportunity to perform some initialization tasks, set up global configurations, and prepare for app setup.
+
+- application(_:didFinishLaunchingWithOptions:): After the app has launched and its initial setup is complete, this method is called. It's the last method called during app launch and is commonly used for post-launch tasks and additional configuration.
+
+- applicationDidBecomeActive(_:): This method is called when the app becomes active, either at startup or when returning from the background. It's an appropriate place to start or resume tasks, like animations, audio playback, or network requests.
+
+- applicationWillResignActive(_:): When the app is about to move from the active to the inactive state, this method is called. You can use it to pause ongoing tasks and save user data.
+
+- applicationDidEnterBackground(_:): This method is called when the app enters the background state. It's a good place to perform any tasks that are necessary to save app data, stop timers, or release resources.
+
+- applicationWillEnterForeground(_:): Just before the app transitions from the background to the active state, this method is called. It's a suitable place for tasks like resuming any paused operations or updating the user interface.
+
+- applicationWillTerminate(_:): This method is called when the app is about to be terminated. You can use it to save any critical data or perform cleanup operations, but keep in mind that you have limited time to execute code in this method.
+
+- applicationDidReceiveMemoryWarning(_:): When the system experiences memory pressure, it may call this method on the AppDelegate. It's an opportunity to release memory and resources to prevent the app from being terminated.
+
+- application(_:open:options:): This method is called when the app is launched from another app or when it's asked to open a file. You can handle custom URL schemes and file open requests here.
+
+- application(_:handleEventsForBackgroundURLSession:completionHandler:): If your app performs background downloads using URLSession, this method is called to handle the completion of background downloads.
+
 ## Initializers or Inits
 memberwise (structs)
 default initializers
