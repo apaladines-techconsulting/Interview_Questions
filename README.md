@@ -287,6 +287,43 @@ Was developed from C and C++
             - NSDictionary
     - NSNameSpace
 
+## Difference between ObjC and Swift in compiler execution?
+In terms of performance, Objective-C can have some performance overhead compared to Swift.
+
+- **Objective-C:** Uses a two-step compilation process.
+    - First, the code is compiled into intermediate code (LLVM IR or Objective-C bytecode) by the Clang compiler.
+        - (LLVM IR → Low-Level Virtual Machine Intermediate Representation)
+    - Then, the runtime system (Objective-C runtime) handles dynamic method dispatch and other runtime features.
+- **Swift:** Uses a single-step compilation process. The Swift compiler (also part of Clang/LLVM) directly produces machine code or bytecode, depending on the target platform.
+
+## Use of dynamic keyword in swift?
+We use `dynamic` keywords in swift for:
+**Interoperability with Objective-C**:
+functions and properties because swift is uses static dispatch instead of Objective-C that is dynamic runtime system.
+
+**Key-Value Coding (KVC) and Key-Value Observing (KVO):**
+- KVC allows you to access properties by string names
+- KVO enables observing changes to properties.
+
+## Content Compression and Content Hugging.
+`Content hugging`: a priority that indicates how much a view wants to hug its content to prevent it from expanding.
+`Content compression`: resistance - is a priority that indicates how much a view resists being compressed.
+
+## What is Static dispatch or language(Swift)?
+Means that the compiler determines at compile time which implementation of the method should be called based on the declared type of the object. This approach is efficient and safe, as it allows the compiler to catch many errors at compile time.
+
+## What is Dynamic dispatch or language(Objective-C)?
+
+In Objective-C, method calls are resolved at runtime and the method to be executed is determined based on the actual class of the object at runtime. This nature allows flexible runtime behaviors.
+
+
+
+## Explain SwiftUI?
+ - Declarative Language
+ - Built using Swift
+ - Is Apple cross platform
+ - Manages basic animations by default
+ - State management with Wrappers
 
 ## Struct vs Classes (class vs struct):
 `Structs`: 
@@ -454,6 +491,129 @@ By default CoreData run in main thread, a better practice is to run it in privat
 - Nullify: If a category has several notes and the category is deleted, the relationships pointing from the notes to the category are nullified. This is the default delete rule.
 - Cascade: If a note should always have a category, the deletion of a category should automatically delete the notes associated with that category.
 - Deny: If a note is tied to a category, the category cannot be deleted until it is not tied no any note.
+
+## Can I use 2 Managed Object Models?
+
+Yes. Usually done when you want to maintain separate topics inside the same application like a Bank app with clients and enterprises features that works separately inside the same app.
+
+```swift
+// Create a persistent container for the first model
+let container1 = NSPersistentContainer(name: "Model1")
+container1.loadPersistentStores { description, error in
+    if let error = error {
+        fatalError("Failed to load store: \(error)")
+    }
+}
+
+// Create a persistent container for the second model
+let container2 = NSPersistentContainer(name: "Model2")
+container2.loadPersistentStores { description, error in
+    if let error = error {
+        fatalError("Failed to load store: \(error)")
+    }
+}
+```
+
+## Can I use 2 Managed Object Contexts?
+
+First of all, we cannot start a CoreData task and finish it in other thread context.
+
+- **Main Queue and Background Queue Contexts**: In many applications, you have a main queue context (`viewContext`) and one or more background queue contexts. The main queue context is typically used for interacting with the user interface, while background
+ contexts are used for performing tasks that might be time-consuming and
+ should not block the main queue.
+    - Example: `let backgroundContext = persistentContainer.newBackgroundContext()`
+- **Child Contexts:** Child contexts are created as children of a parent context. They allow you to perform changes in a separate context and then merge those changes into the parent context. This is often used to isolate changes made in a temporary context before saving to the main context or persistent store.
+    
+    ```swift
+    let childContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+    childContext.parent = parentContext
+    ```
+    
+- **Multiple Contexts for Isolation:** In some cases, you might use multiple contexts to isolate different parts of your application's data. For example, you could have one context dedicated to user authentication and another for managing application settings.
+- **Concurrency Control**: Multiple contexts can help you manage concurrency. For example, if you have a long-running background task that updates data, it can use its own context and then merge the changes into the main context when the task is complete.
+- **Temporary or Scratch Contexts**: You can create temporary contexts for specific tasks, such as importing data, performing batch updates, or calculating values without affecting your main data.
+
+```swift
+// Create the main queue context (viewContext)
+let mainContext = persistentContainer.viewContext
+
+// Create a background queue context
+let backgroundContext = persistentContainer.newBackgroundContext()
+
+// Perform operations on the main context (viewContext)
+let entity = MyEntity(context: mainContext)
+entity.name = "Example"
+
+// Perform operations on the background context
+backgroundContext.perform {
+    let backgroundEntity = MyEntity(context: backgroundContext)
+    backgroundEntity.name = "Background Example"
+
+    do {
+        try backgroundContext.save() // Save changes in the background context
+    } catch {
+        print("Error saving background context: \(error)")
+    }
+
+    // Merge changes into the main context
+    mainContext.perform {
+        do {
+            try mainContext.save() // Save changes in the main context
+        } catch {
+            print("Error saving main context: \(error)")
+        }
+    }
+}
+```
+
+## What is the background queue technique?
+
+This technique is essential for improving the responsiveness and performance of your app, especially when dealing with time-consuming or potentially blocking operations. It's often used in conjunction with technologies like Grand Central Dispatch (GCD) or Operation Queues. Here's how it works.
+
+```swift
+// Dispatch a task to a background queue
+DispatchQueue.global().async {
+    // Perform time-consuming task
+    let result = performSomeTask()
+
+    // Update UI on the main queue
+    DispatchQueue.main.async {
+        updateUIWithResult(result)
+    }
+}
+```
+
+```swift
+import Foundation
+
+// Create an OperationQueue for background tasks
+let backgroundQueue = OperationQueue()
+backgroundQueue.name = "BackgroundQueue"
+
+// Create a custom operation for the time-consuming task
+class MyOperation: Operation {
+    override func main() {
+        if isCancelled {
+            return
+        }
+        
+        // Perform time-consuming task
+        let result = performSomeTask()
+        
+        // Update UI on the main queue
+        DispatchQueue.main.async {
+            updateUIWithResult(result)
+        }
+    }
+}
+
+// Create an instance of the custom operation
+let myOperation = MyOperation()
+
+// Add the operation to the background queue
+backgroundQueue.addOperation(myOperation)
+```
+
 
 ## App Life cycle States:
 - `Not Running:`
