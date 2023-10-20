@@ -304,6 +304,39 @@ functions and properties because swift is uses static dispatch instead of Object
 **Key-Value Coding (KVC) and Key-Value Observing (KVO):**
 - KVC allows you to access properties by string names
 - KVO enables observing changes to properties.
+  
+```swift
+import Foundation
+
+// Define a class that we want to observe
+class Person: NSObject {
+    @objc dynamic var name: String
+    @objc dynamic var age: Int
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+}
+
+// Create an instance of the Person class
+let person = Person(name: "John", age: 30)
+
+// Add an observer to watch changes in the 'age' property
+let ageObservation = person.observe(\.age, options: [.new, .old]) { person, change in
+    if let newValue = change.newValue as? Int, let oldValue = change.oldValue as? Int {
+        print("Age changed from \(oldValue) to \(newValue)")
+    }
+}
+
+// Using Key-Value Coding to access and modify properties
+person.setValue("Alice", forKey: "name")
+person.setValue(35, forKey: "age")
+
+// Remove the observer when it's no longer needed
+ageObservation.invalidate()
+
+```
 
 ## Content Compression and Content Hugging.
 `Content hugging`: a priority that indicates how much a view wants to hug its content to prevent it from expanding.
@@ -1087,3 +1120,84 @@ BDD: Behavioural Driven Development:
 
 - Limited Cross-Platform Support:
         Although SwiftUI supports multiple Apple platforms, achieving full cross-platform development (e.g., iOS and macOS) with shared code and UI can still be challenging due to platform-specific differences.
+
+
+# Solving problems interview :
+
+## I have a login page, 7 concurrent api calls, first 4 are independent(parallel), 5 output is the input of 6, 6 output is the input of 7
+
+- **OperationQueue:**
+
+```swift
+let operationQueue = OperationQueue()
+operationQueue.maxConcurrentOperationCount = 4
+
+let operation1 = BlockOperation { }
+let operation2 = BlockOperation { }
+let operation3 = BlockOperation { }
+let operation4 = BlockOperation { }
+
+let operation5 = BlockOperation { }
+let operation6 = BlockOperation { }
+let operation7 = BlockOperation { }
+
+operation5.addDependency(operation4)
+operation6.addDependency(operation5)
+operation7.addDependency(operation6)
+
+operationQueue.addOperations([operation1, operation2, operation3, operation4, operation5, operation6, operation7], waitUntilFinished: false)
+```
+
+- **DispatchWorkItem:**
+
+```swift
+import Foundation
+
+// Create a DispatchQueue for the tasks
+let queue = DispatchQueue(label: "com.example.taskQueue", attributes: .concurrent)
+
+// Create a DispatchGroup to coordinate the tasks
+let group = DispatchGroup()
+
+// Create DispatchWorkItems for tasks A, B, C, and D
+let workItemA = DispatchWorkItem { }
+let workItemB = DispatchWorkItem { }
+let workItemC = DispatchWorkItem { }
+let workItemD = DispatchWorkItem { }
+
+// Add tasks A, B, C, and D to the queue and group
+queue.async(group: group, execute: workItemA)
+queue.async(group: group, execute: workItemB)
+queue.async(group: group, execute: workItemC)
+queue.async(group: group, execute: workItemD)
+
+// Wait for tasks A, B, C, and D to complete
+group.wait()
+
+// Create DispatchWorkItems for tasks E, F, and G
+let workItemE = DispatchWorkItem { }
+let workItemF = DispatchWorkItem { }
+let workItemG = DispatchWorkItem { }
+
+// Set dependencies using notify
+workItemE.notify(queue: queue) {
+    // Execute task F after task E
+    queue.async(execute: workItemF)
+}
+
+workItemF.notify(queue: queue) {
+    // Execute task G after task F
+    queue.async(execute: workItemG)
+}
+
+// Add task E to the queue
+queue.async(execute: workItemE)
+
+// Wait for task G to complete (or you can use a group if needed)
+workItemG.wait()
+
+// Perform any final cleanup or actions
+print("All tasks are complete")
+```
+
+
