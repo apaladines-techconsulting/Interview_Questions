@@ -723,10 +723,10 @@ backgroundQueue.addOperation(myOperation)
 - application(_:handleEventsForBackgroundURLSession:completionHandler:): If your app performs background downloads using URLSession, this method is called to handle the completion of background downloads.
 
 ## Initializers or Inits
-memberwise (structs)
-default initializers
-failable required
-required initializers
+- memberwise (structs)
+- default initializers
+- failable required
+- required initializers
 
 ## Combine:
  It is a native framework made by Apple for Reactive development programming introduced in iOS 13.0
