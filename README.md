@@ -1200,4 +1200,26 @@ workItemG.wait()
 print("All tasks are complete")
 ```
 
+## Deep linking:
+Deep linking in iOS refers to the practice of linking to specific content or pages within a mobile app from external sources or other apps. It allows users to navigate directly to a specific view or screen within an app.
+
+- URL Scheme: One common way to implement deep linking is by defining a custom URL scheme for your app. For example, your app might register a URL scheme like myapp:// to handle deep links.
+
+- Universal Links: Apple introduced Universal Links as a more seamless and secure way of handling deep links. Universal Links allow your app to claim specific web URLs and open them in the app without launching Safari. This feature is based on the Associated Domains capability in Xcode.
+
+- App Links: Similar to Universal Links, Facebook's App Links is a standard for deep linking that works across different platforms, not just iOS. It's a way to ensure a consistent deep linking experience for your app's content shared on social media.
+
+- Custom URL Handling: To handle deep links, you need to define and implement custom URL handling in your app. This is done by modifying the app's Info.plist and creating code to handle the URLs when the app is launched from a deep link.
+
+- Routing and Navigation: Once the deep link is triggered, your app needs to route the user to the appropriate view or screen based on the content specified in the deep link. This often involves using a routing or navigation system to determine the destination.
+
+- Deferred Deep Linking: Deferred deep linking allows you to capture a user's action before they install the app. This is useful for tracking the source of installations and for providing a seamless experience once the app is installed.
+
+- Analytics: To measure the effectiveness of your deep linking strategy, you should implement analytics to track user interactions with deep links, such as which links were clicked, how often, and the resulting user actions.
+
+- Security: Deep linking can open up security vulnerabilities if not implemented carefully. Always validate and sanitize deep link inputs to prevent potential attacks.
+
+- User Experience: Deep linking should enhance the user experience by providing a seamless transition from external content to your app. Ensure that the user is directed to the most relevant part of your app.
+
+- Fallback URLs: In cases where the app isn't installed or deep linking fails for some reason, you can specify fallback URLs to open in a web browser. This provides continuity for users who may not have the app.
 
