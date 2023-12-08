@@ -338,7 +338,7 @@ ageObservation.invalidate()
 
 ```
 
-## Content Compression and Content Hugging.
+## Content Compression and Content Hugging UIKit.
 `Content hugging`: a priority that indicates how much a view wants to hug its content to prevent it from expanding.
 `Content compression`: resistance - is a priority that indicates how much a view resists being compressed.
 
