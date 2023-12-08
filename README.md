@@ -378,15 +378,15 @@ In Objective-C, method calls are resolved at runtime and the method to be execut
 
 ## Value Type vs Reference Type:
 `Value Type`:
-    - Is a type of data that is copied when assigned to a new variable or passed as an argument to a function.
-    - Each variable or instance of a value type has its own independent copy of the data, and changes made to one copy do not affect other copies.
-    - Common examples of value types in Swift include basic types like integers, floating-point numbers, booleans, strings, arrays, and structs.
+- Is a type of data that is copied when assigned to a new variable or passed as an argument to a function.
+- Each variable or instance of a value type has its own independent copy of the data, and changes made to one copy do not affect other copies.
+- Common examples of value types in Swift include basic types like integers, floating-point numbers, booleans, strings, arrays, and structs.
     
 `Reference Type`: 
-    - Is a type of data where variables or instances share a reference to the same underlying data in memory.
-    - When a reference type is assigned to a new variable or passed as an argument, only the reference (memory address) is copied, not the actual data.
-    - Changes made to one instance of a reference type will be reflected in all other instances that share the same reference.
-    - Common examples of reference types in Swift include classes and closures.
+- Is a type of data where variables or instances share a reference to the same underlying data in memory.
+- When a reference type is assigned to a new variable or passed as an argument, only the reference (memory address) is copied, not the actual data.
+- Changes made to one instance of a reference type will be reflected in all other instances that share the same reference.
+- Common examples of reference types in Swift include classes and closures.
 
 ## Multithreading or threading options in iOS (6 ways):
 1. GCD -> 
