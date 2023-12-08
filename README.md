@@ -367,14 +367,14 @@ In Objective-C, method calls are resolved at runtime and the method to be execut
 - Structs are faster because they are put as stock in memory
 - Doesn't have inheritance
 
-![image](https://github.com/apaladines-techconsulting/Interview_Questions/assets/138136886/97f2b4cb-71d6-4e8d-9454-beaafb3634ed)
-
-
 `Classes`:
 - Reference type meaning multiple variables can point to the same object in memory.
 - Have inheritance.
 - They are deallocable and often used for complex data models.
 - Not Thread safe, multiple threads can accesess to the object at the same time.
+
+![image](https://github.com/apaladines-techconsulting/Interview_Questions/assets/138136886/97f2b4cb-71d6-4e8d-9454-beaafb3634ed)
+
 
 ## Value Type vs Reference Type:
 `Value Type`:
