@@ -339,8 +339,8 @@ ageObservation.invalidate()
 ```
 
 ## Content Compression and Content Hugging UIKit.
-`Content hugging`: a priority that indicates how much a view wants to hug its content to prevent it from expanding.
-`Content compression`: resistance - is a priority that indicates how much a view resists being compressed.
+- `Content hugging`: a priority that indicates how much a view wants to hug its content to prevent it from expanding.
+- `Content compression`: resistance - is a priority that indicates how much a view resists being compressed.
 
 ## What is Static dispatch or language(Swift)?
 Means that the compiler determines at compile time which implementation of the method should be called based on the declared type of the object. This approach is efficient and safe, as it allows the compiler to catch many errors at compile time.
