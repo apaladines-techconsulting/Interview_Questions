@@ -398,10 +398,6 @@ In Objective-C, method calls are resolved at runtime and the method to be execut
 7. Defer
 8. DispatchGroup -> Group of DispatchWorkItem
 
-### Grand Central Dispatch VS NSOperation
-- `GDC:` Presice and easy to use, lots of threads
-- `NSOperation` more control over the multithreading stop, continue, cancel.
-
 #### GCD:
 It allows you to perform tasks concurrently by dividing them into smaller blocks and submitting them to queues that can be concurrent or serial.(main queue as maint thread).
 - `main` -> Serial queue.
@@ -419,26 +415,26 @@ It allows you to perform tasks concurrently by dividing them into smaller blocks
 5. `Background` => Something which is not visible to user like creating backups, restoring from server/ syncing like retrieving data from google cloud, etc.
 6. `Unspecified` => This has the last priority.
 
-#### OperationQueue:
-Manages the execution of tasks as individual Operation objects.
-Tasks as Operations.
-Concurrency Control.
-Dependency Management.
-Prioritization.
-Cancellation.
-Completion Block.
-
 #### Await Async:
 Commonly used in api calls, get data from a file, getting data from keychain.
 `Sync` -> Blocks everything after it is finalized. One thing at time.
 `Async` -> Allows to continue with the application and run things in.
 
 #### OperationQueue:
-Are nothing but tasks. They have the ability to add dependency, pause, stop and resume.
-OperationQueue is a high-level iOS mechanism that manages the execution of tasks (operations) concurrently. It provides control over task order, cancellation, and prioritization, making it easier to handle complex and structured operations compared to using GCD directly.
-you can priorityze the sequences
-you can add operation dependency 
-you can add, resume, notify, cancel threash.
+Is a high-level iOS mechanism that manages the execution of tasks (operations) concurrently.
+- Manages the execution of tasks as individual Operation objects.
+- Concurrency Control: pause, stop and resume.
+- Dependency Management: Prioritizing Operations over other.
+- Prioritization.
+- Cancellation.
+- Completion Block.
+
+### Grand Central Dispatch VS NSOperation
+- `GDC:` Presice and easy to use, lots of threads
+- `NSOperation` more control over the multithreading stop, continue, cancel.
+    - you can priorityze the sequences
+    - you can add operation dependency 
+    - you can add, resume, notify, cancel threash.
 
 ```swift
 //Generating simple tasks:
