@@ -389,19 +389,18 @@ In Objective-C, method calls are resolved at runtime and the method to be execut
 - Common examples of reference types in Swift include classes and closures.
 
 ## Multithreading or threading options in iOS (6 ways):
-1. GCD -> 
-2. OperationQueue
+1. GCD -> Grand Central Dispatch
+2. OperationQueue -> Group of Operation 
 3. Await Async
 4. Actor
 5. Thread
 6. Semaphore
+7. Defer
+8. DispatchGroup -> Group of DispatchWorkItem
 
-
-DispatchWorkItem
-DispatchGroup
-
-### Grand Central Dispatch VS -> NSOperation
--  n njhuy76presice and easy to use, lots of threads vs NSOperation more control over the multithreading stop, continue, cancel.
+### Grand Central Dispatch VS NSOperation
+- `GDC:` Presice and easy to use, lots of threads
+- `NSOperation` more control over the multithreading stop, continue, cancel.
 
 #### GCD:
 It allows you to perform tasks concurrently by dividing them into smaller blocks and submitting them to queues that can be concurrent or serial.(main queue as maint thread).
