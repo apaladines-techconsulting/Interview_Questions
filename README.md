@@ -415,10 +415,63 @@ It allows you to perform tasks concurrently by dividing them into smaller blocks
 5. `Background` => Something which is not visible to user like creating backups, restoring from server/ syncing like retrieving data from google cloud, etc.
 6. `Unspecified` => This has the last priority.
 
-#### Await Async:
+#### Async Await:
 Commonly used in api calls, get data from a file, getting data from keychain.
-`Sync` -> Blocks everything after it is finalized. One thing at time.
-`Async` -> Allows to continue with the application and run things in.
+- `Sync` -> Blocks everything after it is finalized. One thing at time.
+- `Async` -> Allows to continue with the application and run things in.
+
+#### Async Await Data Races Management:
+While `async/await` simplifies asynchronous programming, `actors` play a crucial role in avoiding data races by providing a structured way to manage shared mutable state in concurrent Swift code.
+```swift
+// Define an actor for managing shared data
+actor DataManager {
+    var sharedData: Int = 0
+
+    // Actor-isolated method to safely update sharedData
+    func updateData(newValue: Int) {
+        sharedData = newValue
+    }
+}
+
+// Asynchronous function to simulate fetching data
+func fetchData(seconds: UInt64) async -> Int {
+    // Simulate fetching data asynchronously
+    try! await Task.sleep(nanoseconds: 1_000_000_000 * seconds) // 1 second
+    return 42
+}
+
+// Main function
+func main() async {
+    // Create an instance of the DataManager actor
+    let dataManager = DataManager()
+
+    // Concurrently fetch data using async/await
+    async let result1 = fetchData(seconds: 1)
+    async let result2 = fetchData(seconds: 4)
+
+    // Wait for both results to complete
+    let finalResult1 = await result1
+    let finalResult2 = await result2
+
+    // Perform tasks within an actor to avoid data races
+    await dataManager.updateData(newValue: finalResult1 + finalResult2)
+
+    // Access sharedData within the actor
+    let value = await dataManager.sharedData
+    print("Final Result:", value) // Safe access to sharedData
+}
+
+// Run the asynchronous main function
+Task {
+    await main()
+}
+```
+
+#### Async Await Concurrent usage:
+```swift
+async let result1 = fetchData()
+async let result2 = fetchData()
+```
 
 #### OperationQueue:
 Is a high-level iOS mechanism that manages the execution of tasks (operations) concurrently.
