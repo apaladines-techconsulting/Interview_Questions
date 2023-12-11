@@ -3,14 +3,36 @@
 # My experience.
 
 # Elevator Speech:
+Hello, my name is Andres Paladines,
+Thanks for this chance of interview today, I’m looking forward talking to you about the Senior Developer position. 
 
-Hello, I'm Andres, an accomplished iOS Developer with over 8 years of experience crafting refined mobile applications. My track record includes 5 published and successful apps, showcasing my experience in Objective-C, UIKit and SwiftUI. 
+iOS developer here at NorthWest Bank
 
-My contribution on 'Northwest Mobile Banking' app was redesigning UI components and implementing MVVM architecture. At Marriott, I played a key role enhancing the 'Marriott Bonvoy' app implementing Apple accessibility APIs and migrating code from UIKit to SwiftUI. I also have experience with the Agile approach and have managed end-to-end development at companies like Cardinal Health and Floor & Décor.
+- implementing budged section
+- From UIKit to SwiftUI
+- From MVC to MVVM
+- From closures to async await.
+- Test coverage from 60% to 70%
 
-I specialize in frameworks like UIKit, SwiftUI, Combine, CoreData, MapKit, CoreLocation and 3rd-party frameworks like AlamoFire and Firebase. I also excel at architecting solutions using design patterns like MVVM-C, VIPER and Clean Architecture. With a deep understanding of multithreading, I ensure seamless performance using GCD, Operation Queue, Actors and Await Async. While collaborating with cross-functional teams, I integrated CI/CD tools like Jenkins and Fastlane as part of my daily routine. Another part of my routine was managing version control with GIT. This included helping developers to deal with merge conflits and approving pull requests of previously reviewed code.
+Before of that, I was at Marriot Bonvoy.
 
-With my technical depth and more than 12 years in IT, I am ready to bring substantial value to your technical endeavours.
+- an international hotel booking app.
+- Migrate from MVC to MVVM.
+- From closures to combine.
+
+Molded me as iOS lead  by Teaching and Guiding my comrades.
+
+to provide best performance and stability to customers.
+
+---
+
+- I am proficient in swift and objective-c,
+- `architectures` like MVC, MVVM, MVVM-C, Clean architecture and VIPER.
+- frameworks like UIKit, SwiftUI, Combine, CoreLocation, PassKit, LocalAuthentication, Firebase and so on.
+
+---
+
+So I reviewed your app and I liked what is saw and I feel my tech skills make me a good fit here.
 
 #### Jobs:
 - Splendid Spoon, Minneapolis, Minnesota, U.S.- 02/2010 – 12/2014
