@@ -528,9 +528,9 @@ They are the old way to use concurrency in app to handle networking, background 
 - `Counting Semaphore`: This type of semaphore has a specified maximum count greater than 1. It allows multiple threads or processes to access the resource simultaneously, up to the maximum count. Counting semaphores are often used to control access to resources that can handle a limited number of concurrent users, like limiting the number of connections to a database or controlling access to a pool of shared objects.
 
 ## Generics:
-Generics represent any tyoe of data you define to mqke reusable and modular the functionality of the code.
+Generics represent any type of data you define to make reusable and modular code functionalities.
 
-You can ad restrictions like T: Decodable to specify a particular behaviour to the function. 
+You can add restrictions like `T: Decodable` to specify a particular behaviour to the function. 
 
 Advantages:
 - Reusability: Write code that works with different types.
@@ -553,12 +553,14 @@ Advantages:
 4. Bundle and some files => json, text,
 5. `.plist` => stored property lists inside the project
 6. Realm - 3rd party option to save data locally in our app.
+7. DataStore - Amplify with Cloud sync
+8. RealTime Database - Firebase
 
 #### CoreData Stack:
-- Managed Object Model: The blueprint that defines how your data looks, including its structure, attributes, and relationships. It's like designing the layout of your data.
-- Managed Object Context: The workspace where you create, modify, and interact with your data objects. Think of it as a place to perform actions on your data.
-- Persistent Store Coordinator: The bridge that connects your data objects in the context to where they're actually stored. It manages the translation between your app's objects and their storage format.
-- Persistent Store: The place where your data is saved, like a file or database. It's where your app's data lives on disk, even when the app is closed.
+- `Managed Object Model:` The blueprint that defines how your data looks, including its structure, attributes, and relationships. It's like designing the layout of your data.
+- `Managed Object Context:` The workspace where you create, modify, and interact with your data objects. Think of it as a place to perform actions on your data.
+- `Persistent Store Coordinator:` The bridge that connects your data objects in the context to where they're actually stored. It manages the translation between your app's objects and their storage format.
+- `Persistent Store:` The place where your data is saved, like a file or database. It's where your app's data lives on disk, even when the app is closed.
   
 By default CoreData run in main thread, a better practice is to run it in privateContext that means background.
 
