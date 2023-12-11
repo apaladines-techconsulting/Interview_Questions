@@ -1128,9 +1128,9 @@ BDD: Behavioural Driven Development:
   13. @MainActor
   14. @Namespace
 
-## Difference between
-     @StateObject -> Only recreates a part of the view
-     @ObservedObject -> recreates everything
+## Difference between StateObject and ObservedObject:
+- `@StateObject` is used when the view is responsible for creating and owning the observed object, ensuring its persistence across updates. Only recreates a part of the view
+- `@ObservedObject` is used when an external object is observed by the view, and the view reacts to changes in the observed object's state. Recreates everything
      
 ## SwiftUI vs Swift
 - Everything made with structs Tsack memory (faster) instead of classes Heat memory
