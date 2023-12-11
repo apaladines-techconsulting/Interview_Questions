@@ -349,15 +349,6 @@ Means that the compiler determines at compile time which implementation of the m
 
 In Objective-C, method calls are resolved at runtime and the method to be executed is determined based on the actual class of the object at runtime. This nature allows flexible runtime behaviors.
 
-
-
-## Explain SwiftUI?
- - Declarative Language
- - Built using Swift
- - Is Apple cross platform
- - Manages basic animations by default
- - State management with Wrappers
-
 ## Struct vs Classes (class vs struct):
 `Structs`: 
 - value type, meaning they can be copied and passed arround the code.
@@ -810,26 +801,6 @@ backgroundQueue.addOperation(myOperation)
     4. Cancelation support.
     5. Built in memory management 
 
-- Property Wrappers:
-  1. @State
-  2. @ObservedObject
-  3. @StateObject
-  4. @Binding
-  5. @Environment
-  6. @EnvironmentObject
-  7. @FocusState
-  8. @Published
-  9. @FetchRequest
-  10. @AppStorage
-  11. @ViewBuilder
-  12. @FetchedObject
-  13. @MainActor
-  14. @Namespace
-
- Difference between
-     @StateObject -> Only recreates a part of the view
-     @ObservedObject -> recreates everything
-     
 #### Common higher methods (OPERATORS) to use in Combine:
 - `.tryMap` -> To map data.
 - `.decode` -> Parsinng.
@@ -1134,6 +1105,33 @@ BDD: Behavioural Driven Development:
     Quick and Nimble -> Start with given (setting up) when () and then ()
     More for Testers than developers. It's a higher level Testing.
 
+## Explain SwiftUI?
+ - Declarative Language
+ - Built using Swift
+ - Is Apple cross platform
+ - Manages basic animations by default
+ - State management with Wrappers
+
+## Property Wrappers:
+  1. @State
+  2. @ObservedObject
+  3. @StateObject
+  4. @Binding
+  5. @Environment
+  6. @EnvironmentObject
+  7. @FocusState
+  8. @Published
+  9. @FetchRequest
+  10. @AppStorage
+  11. @ViewBuilder
+  12. @FetchedObject
+  13. @MainActor
+  14. @Namespace
+
+## Difference between
+     @StateObject -> Only recreates a part of the view
+     @ObservedObject -> recreates everything
+     
 ## SwiftUI vs Swift
 - Everything made with structs Tsack memory (faster) instead of classes Heat memory
 - More updated
