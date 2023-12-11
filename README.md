@@ -523,12 +523,13 @@ Actors encapsule mutable state within a protected boundary, ensuring that only o
 They are the old way to use concurrency in app to handle networking, background processing, and UI updates. using them directly can be complex increasing the probability for data races and deadlocks.
 
 #### Semaphore:
-Semaphore is used in concurrent programming. Acts as a gatekeeper, regulating the number of threads or processes allowed to access a particular resource at any given time.
-`Binary Semaphore`: Also known as a mutex (short for mutual exclusion), this type of semaphore has a maximum count of 1. It means only one thread or process can access the resource at a time. Binary semaphores are typically used to protect critical sections of code, where only one thread should be executing at any given time.
-`Counting Semaphore`: This type of semaphore has a specified maximum count greater than 1. It allows multiple threads or processes to access the resource simultaneously, up to the maximum count. Counting semaphores are often used to control access to resources that can handle a limited number of concurrent users, like limiting the number of connections to a database or controlling access to a pool of shared objects.
+- Semaphore is used in concurrent programming. Acts as a gatekeeper, regulating the number of threads or processes allowed to access a particular resource at any given time.
+- `Binary Semaphore`: Also known as a mutex (short for mutual exclusion), this type of semaphore has a maximum count of 1. It means only one thread or process can access the resource at a time. Binary semaphores are typically used to protect critical sections of code, where only one thread should be executing at any given time.
+- `Counting Semaphore`: This type of semaphore has a specified maximum count greater than 1. It allows multiple threads or processes to access the resource simultaneously, up to the maximum count. Counting semaphores are often used to control access to resources that can handle a limited number of concurrent users, like limiting the number of connections to a database or controlling access to a pool of shared objects.
 
 ## Generics:
 Generics represent any tyoe of data you define to mqke reusable and modular the functionality of the code.
+
 You can ad restrictions like T: Decodable to specify a particular behaviour to the function. 
 
 Advantages:
