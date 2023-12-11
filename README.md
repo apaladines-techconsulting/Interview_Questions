@@ -8,7 +8,7 @@ Thanks for this chance of interview today, I’m looking forward talking to you 
 
 iOS developer here at NorthWest Bank
 
-- implementing budged section
+- Implementing Budged section
 - From UIKit to SwiftUI
 - From MVC to MVVM
 - From closures to async await.
@@ -16,21 +16,17 @@ iOS developer here at NorthWest Bank
 
 Before of that, I was at Marriot Bonvoy.
 
-- an international hotel booking app.
-- Migrate from MVC to MVVM.
+- An international hotel booking app.
+- Recreating the Products section.
+- From UIKit to SwiftUI.
+- Migrating from MVC to MVVM.
 - From closures to combine.
 
-Molded me as iOS lead  by Teaching and Guiding my comrades.
-
-to provide best performance and stability to customers.
-
----
+Molded me as iOS lead by Teaching and Guiding my comrades to provide best performance and stability to customers.
 
 - I am proficient in swift and objective-c,
 - `architectures` like MVC, MVVM, MVVM-C, Clean architecture and VIPER.
 - frameworks like UIKit, SwiftUI, Combine, CoreLocation, PassKit, LocalAuthentication, Firebase and so on.
-
----
 
 So I reviewed your app and I liked what is saw and I feel my tech skills make me a good fit here.
 
