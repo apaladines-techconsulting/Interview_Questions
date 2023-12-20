@@ -407,6 +407,11 @@ In Objective-C, method calls are resolved at runtime and the method to be execut
 7. Defer
 8. DispatchGroup -> Group of DispatchWorkItem
 
+
+### What is dispatch barrier?
+
+Use a barrier to synchronize the execution of one or more tasks in your dispatch queue. When you add a barrier to a concurrent dispatch queue, the queue delays the execution of the barrier block (and any tasks submitted after the barrier) until all previously submitted tasks finish executing. After the previous tasks finish executing, the queue executes the barrier block by itself. Once the barrier block finishes, the queue resumes its normal execution behavior.
+
 #### GCD:
 It allows you to perform tasks concurrently by dividing them into smaller blocks and submitting them to queues that can be concurrent or serial.(main queue as maint thread).
 - `main` -> Serial queue.
