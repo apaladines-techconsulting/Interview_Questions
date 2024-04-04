@@ -3,7 +3,7 @@ Collection of possible questions for Senior iOS Devevelpers
 
 ## OOPS:
 - Object-Oriented Programming
-    - Encapsulation -> Hidding attributes;
+    - Encapsulation -> Hidding attributes
     - Inheritance -> Creating sub classes from superclass
     - Polymorphism -> Subclasses can be treated as objects of a common superclass
     - Abstraction -> Interfaces.- protocols
