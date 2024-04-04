@@ -12,7 +12,7 @@ Collection of possible questions for Senior iOS Devevelpers
 
 S -> `Single Responsibility`: It states that, any function or class should only do one task.
 
-O -> `Open Close Principle1`: Open for extension but closed for modification.
+O -> `Open Close Principle`: Open for extension but closed for modification.
 
 L -> `Liskov Substitution Principle`: Parent class objects should be easily replasable with child or derived object.
 
