@@ -255,6 +255,31 @@ In terms of performance, Objective-C can have some performance overhead compared
     - Then, the runtime system (Objective-C runtime) handles dynamic method dispatch and other runtime features.
 - **Swift:** Uses a single-step compilation process. The Swift compiler (also part of Clang/LLVM) directly produces machine code or bytecode, depending on the target platform.
 
+### Let's break it down in simpler terms:
+
+    Objective-C Compilation Process:
+        Objective-C code goes through a two-step compilation process.
+        First, the code is translated into an intermediate representation (either LLVM IR or Objective-C bytecode) by the Clang compiler.
+        Then, the Objective-C runtime system handles dynamic method dispatch and other runtime features during execution.
+
+    In simpler terms: Objective-C code is translated into a middleman language first, then the runtime system takes care of running the code. This can introduce some overhead because of the additional step and runtime involvement.
+
+    Swift Compilation Process:
+        Swift code undergoes a single-step compilation process.
+        The Swift compiler, which is also part of Clang/LLVM, directly produces machine code or bytecode, depending on the target platform.
+
+    In simpler terms: Swift code is compiled directly into the final form that the computer can execute. There's no intermediate step or additional runtime system involved.
+
+Now, let's address the implications of these differences in terms of performance:
+
+    Objective-C: The two-step compilation process and runtime involvement may introduce some performance overhead, especially in scenarios involving dynamic method dispatch or heavy use of runtime features.
+
+    Swift: The single-step compilation process generally results in more efficient execution because the code is compiled directly into the final form needed by the computer. This can lead to better performance, especially in performance-sensitive applications.
+
+In essence, the differences in compilation processes between Objective-C and Swift can contribute to differences in performance, with Swift generally having an advantage due to its more streamlined compilation process.
+
+
+
 ## Use of dynamic keyword in swift?
 We use `dynamic` keywords in swift for:
 **Interoperability with Objective-C**:
