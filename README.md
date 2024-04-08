@@ -758,6 +758,75 @@ backgroundQueue.addOperation(myOperation)
 - default initializers
 - failable required
 - required initializers
+- 
+
+Memberwise Initializers (Structs):
+```swift
+struct Point {
+    var x: Int
+    var y: Int
+}
+```
+let point = Point(x: 10, y: 20) // Memberwise initializer used
+In Swift, structs automatically receive a memberwise initializer if they don't define any custom initializers. This initializer allows you to initialize the struct's properties by providing values for each member.
+
+Default Initializers:
+```swif
+class Person {
+    var name: String = "John"
+    var age: Int = 30
+}
+```
+let person = Person() // Default initializer used
+Swift provides a default initializer for classes and structs if all of their properties have default values. This initializer allows you to create an instance without providing any initialization parameters.
+
+Failable Initializers:
+```swift
+struct Temperature {
+    let celsius: Double
+    
+    init?(fahrenheit: Double) {
+        if fahrenheit < -459.67 {
+            return nil // Temperature below absolute zero is invalid
+        }
+        self.celsius = (fahrenheit - 32) * 5 / 9
+    }
+}
+
+if let temperature = Temperature(fahrenheit: 100) {
+    print("Temperature in Celsius: \(temperature.celsius)")
+} else {
+    print("Invalid temperature provided")
+}
+```
+Failable initializers are initializers that can fail to initialize an object. They are defined by using init? instead of init. Failable initializers return an optional instance of the appropriate type (Self?), allowing them to return nil to indicate failure.
+
+Required Initializers:
+```swift
+class Vehicle {
+    var wheels: Int
+    
+    required init(wheels: Int) {
+        self.wheels = wheels
+    }
+}
+
+class Car: Vehicle {
+    var doors: Int
+    
+    init(wheels: Int, doors: Int) {
+        self.doors = doors
+        super.init(wheels: wheels)
+    }
+    
+    required init(wheels: Int) {
+        self.doors = 4 // Default number of doors for a car
+        super.init(wheels: wheels)
+    }
+}
+```
+A required initializer is an initializer that subclasses must implement if the superclass defines it. You mark a required initializer by writing the required keyword before the init keyword. In the example above, Car is a subclass of Vehicle, so it must implement the required initializer init(wheels:).
+
 
 ## Combine:
  It is a native framework made by Apple for Reactive development programming introduced in iOS 13.0
