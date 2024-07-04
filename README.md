@@ -1133,6 +1133,7 @@ struct HelloReduxApp: App {
 ```
 
 ### SwiftUI Flux
+```sql
 +-----------------+    dispatch    +----------------+
 |                 |--------------->|                |
 |     View        |                |  Dispatcher    |
@@ -1158,7 +1159,7 @@ struct HelloReduxApp: App {
 |    Service      |<-------------------|   View     |
 |                 |    Fetch data      |            |
 +-----------------+                    +------------+
-
+```
 - **View**: The LoginView and ContentView represent the user interface. The user interacts with the view by entering a username and password and clicking the login button.
 - **Action**: When the user clicks the login button, an Action is created with the type .login and the provided username and password.
 - **Dispatcher**: The Dispatcher receives the action and distributes it to all registered stores.
