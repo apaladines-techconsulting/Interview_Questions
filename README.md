@@ -992,6 +992,289 @@ _**How iOS Does Memory Management?**_
 ```
  It keeps the track of references to objects and releases them when they are no longer needed.
 
+
+### SwiftUI Redux
+![image](https://github.com/adpaladines/Interview_Questions/assets/138136886/82320f5a-130f-4f5e-82c2-6b0e57c5210a)
+
+#### Store
+- Initialized using a reducer and global state
+- May contain a list of middleware
+- Dispatches an action
+- Notifies listeners of state changes
+
+#### Reducer
+- Updates the state. Reducer is the only one that can update the state.
+- Updates parts/slice of the state based on the dispatched actions.
+- An app cn consist of multiple reducers, but at the end, all reducers are joined to create a Single Root Reducer.
+
+#### State could be something like isAuthenticated: Bool () a global variable.
+- Here's an example of AppState (Root) and MoviesState (a slice/parts)
+![image](https://github.com/adpaladines/Interview_Questions/assets/138136886/184265be-4fa0-4673-97cb-f9a9941899a4)
+
+#### Actions
+- fetchMovieesAction
+- SetBoviesAction
+- Increment, etc.
+
+#### Step 1: Most basic Redux architecture:
+```swift
+import Foundation
+
+typealias Reducer: (_ state: State, _ action: Action) -> State
+struct State {
+    var counter: Int = 0
+}
+
+protocol Action { }
+
+func reducer(_ state: State, _ action: Action) -> State {
+    return state
+}
+
+class Store {
+    //var reducer: (_ state: State, _ action: Action) -> State
+    var reducer: Reducer
+    var state: State
+
+    init(reducer: @escaping Reducer, state: State) {
+        self.reducer = reducer
+        self.state = state
+    }
+}
+```
+#### Step 2: Most basic Redux architecture:
+```swift
+import Foundation
+
+typealias Reducer: (_ state: State, _ action: Action) -> State
+struct State {
+    var counter: Int = 0
+}
+
+protocol Action { }
+
+struct IncrementAction: Action {
+}
+
+func reducer(_ state: State, _ action: Action) -> State {
+    var state = state
+    switch action {
+        case _ as IncrementAction:
+            state.counter += 1
+        default:
+            break
+    }
+    return state
+}
+
+class Store: ObservableObject {
+    //var reducer: (_ state: State, _ action: Action) -> State
+    var reducer: Reducer
+    @Published var state: State
+
+    init(reducer: @escaping Reducer, state: State = State()) {
+        self.reducer = reducer
+        self.state = state
+    }
+
+    func dispatch(action: Action) {
+        state = reducer(state, action)
+    }
+}
+
+import SwiftUI
+
+struct ContentView: View {
+
+    @EnvironmentObject var store: Store
+    //Props are used to create a temp state change (verify)
+    struct Props {
+        let counter: Int
+        let onIncrement: () -> Void
+    }
+
+    //func map
+    private func map(state: State) -> Props {
+        Props(counter: state.counter, onIncrement: {
+            store.dispatch(action: IncrementAction())
+        })
+    }
+
+    var body: some View {
+
+        let props = map(state: store.state)
+
+        VStack {
+            Text("\(props.counter)")
+                .padding()
+            Button("Increment") {
+                props.onIncrement() 
+            }
+        }
+    }
+}
+
+#Preview {
+    ContentView()
+}
+
+@main
+struct HelloReduxApp: App {
+
+    let store = Store(reducer: reducer)
+
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .environmentObject(store)
+        }
+    }
+}
+```
+
+### SwiftUI Flux
++-----------------+    dispatch    +----------------+
+|                 |--------------->|                |
+|     View        |                |  Dispatcher    |
+|                 |<---------------|                |
++-------+---------+    register    +-------+--------+
+        |                                    |
+        |                                    |
+    user input                          handleAction
+        |                                    |
+        v                                    v
++-------+---------+                    +-----+------+
+|                 |                    |            |
+|     Action      |------------------->|    Store   |
+|                 |    Action update   |            |
++-------+---------+                    +-----+------+
+        |                                    |
+        |                                    |
+      state                               update state
+        |                                    |
+        v                                    v
++-------+---------+                    +-----+------+
+|                 |                    |            |
+|    Service      |<-------------------|   View     |
+|                 |    Fetch data      |            |
++-----------------+                    +------------+
+
+- **View**: The LoginView and ContentView represent the user interface. The user interacts with the view by entering a username and password and clicking the login button.
+- **Action**: When the user clicks the login button, an Action is created with the type .login and the provided username and password.
+- **Dispatcher**: The Dispatcher receives the action and distributes it to all registered stores.
+- **Store**: The AuthStore receives the action and processes it. For a login action, it calls the NetworkService to authenticate the user.
+- **Service**: The NetworkService simulates a network call to authenticate the user. If successful, it updates the AuthStore state.
+- **View**: The AuthStore state change triggers an update in the ContentView, which either shows the login view or a welcome message based on the authentication state.
+
+```swift
+import SwiftUI
+import Combine
+
+protocol StoreFlux {
+    func handleAction(action: ActionFlux)
+}
+
+class NetworkService {
+    static func login(username: String, password: String, completion: @escaping (Bool) -> Void) {
+        // Simulate network login
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+            completion(username == "user" && password == "pass")
+        }
+    }
+}
+
+
+enum ActionTypes {
+    case login(username: String, password: String)
+    case logout
+}
+
+struct ActionFlux {
+    let type: ActionTypes
+}
+
+
+class Dispatcher {
+    static let shared = Dispatcher()
+    
+    private var storeCallbacks: [StoreFlux] = []
+    
+    func register(store: StoreFlux) {
+        storeCallbacks.append(store)
+    }
+    
+    func dispatch(action: ActionFlux) {
+        for store in storeCallbacks {
+            store.handleAction(action: action)
+        }
+    }
+}
+
+class AuthStore: StoreFlux, ObservableObject {
+    
+    @Published var isAuthenticated: Bool = false
+    
+    init() {
+        // Register the store with the dispatcher
+        Dispatcher.shared.register(store: self)
+    }
+    
+    func handleAction(action: ActionFlux) {
+        switch action.type {
+        case .login(let username, let password):
+            // Here we can use a service to authenticate
+            NetworkService.login(username: username, password: password) { success in
+                DispatchQueue.main.async {
+                    self.isAuthenticated = success
+                }
+            }
+        case .logout:
+            isAuthenticated = false
+        }
+    }
+}
+
+struct ContentViewFlux: View {
+    @ObservedObject var authStore = AuthStore()
+    
+    var body: some View {
+        if authStore.isAuthenticated {
+            Text("Welcome!")
+        } else {
+            LoginViewFlux()
+        }
+    }
+}
+
+struct LoginViewFlux: View {
+    @State private var username: String = ""
+        @State private var password: String = ""
+        
+        var body: some View {
+            VStack {
+                TextField("Username", text: $username)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                SecureField("Password", text: $password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                Button("Login") {
+                    let action = ActionFlux(type: .login(username: username, password: password))
+                    Dispatcher.shared.dispatch(action: action)
+                }
+                .padding()
+            }
+            .padding()
+        }
+}
+
+#Preview {
+    ContentViewFlux()
+}
+```
+
 ### ARC (Automatic Reference Counting):
 Is a memory management mechanism used in Swift to automatically manage memory by keeping track of references to objects. 
 When there are no more strong references to an object, it gets deallocated.
